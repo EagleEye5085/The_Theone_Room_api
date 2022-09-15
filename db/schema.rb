@@ -20,13 +20,12 @@ ActiveRecord::Schema.define(version: 2022_09_14_210909) do
     t.integer "ambiance"
     t.integer "tp_quality"
     t.integer "privacy"
+    t.integer "user_id"
     t.string "other_comments"
     t.bigint "throne_room_id"
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["throne_room_id"], name: "index_reviews_on_throne_room_id"
-    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "throne_rooms", force: :cascade do |t|
@@ -50,5 +49,4 @@ ActiveRecord::Schema.define(version: 2022_09_14_210909) do
   end
 
   add_foreign_key "reviews", "throne_rooms"
-  add_foreign_key "reviews", "users"
 end

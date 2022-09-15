@@ -14,82 +14,91 @@ RSpec.describe 'throne room api requests' do
     thrones.each do |throne|
       expect(throne).to have_key(:id)
       expect(throne).to have_key(:attributes)
+      # binding.pry
 
       expect(throne[:attributes][:name]).to be_a(String)
       expect(throne[:attributes][:address]).to be_a(String)
       expect(throne[:attributes][:latitude]).to be_a(Float)
       expect(throne[:attributes][:longitude]).to be_a(Float)
       expect(throne[:attributes][:directions]).to be_a(String)
-      expect(throne[:attributes][:baby_changing_station]).to be_a(Boolean)
-      expect(throne[:attributes][:bathroom_style]).to be_a(Integer)
-      expect(throne[:attributes][:key_code_required]).to be_a(Boolean)
+      expect(throne[:attributes][:baby_changing_station]).to be_a(String)
+      expect(throne[:attributes][:bathroom_style]).to be_a(String)
+      expect(throne[:attributes][:key_code_required]).to be_a(String)
     end
   end
 
   it 'can get one throne by its id' do
 
-    id = create(:item, merchant_id: merchant_id).id
+    id = create(:throne_room).id
 
-    get "/api/v1/items/#{id}"
+    get "/api/v1/throne_rooms/#{id}"
 
     response_body = JSON.parse(response.body, symbolize_names: true)
-    item = response_body[:data]
+    throne = response_body[:data]
 
     expect(response).to be_successful
-    expect(item).to have_key(:id)
-    expect(item).to have_key(:attributes)
+    expect(throne).to have_key(:id)
+    expect(throne).to have_key(:attributes)
 
-    expect(item[:attributes][:name]).to be_a(String)
-    expect(item[:attributes][:description]).to be_a(String)
-    expect(item[:attributes][:unit_price]).to be_a(Float)
-    expect(item[:attributes][:merchant_id]).to be_a(Integer)
+    expect(throne[:attributes][:name]).to be_a(String)
+    expect(throne[:attributes][:address]).to be_a(String)
+    expect(throne[:attributes][:latitude]).to be_a(Float)
+    expect(throne[:attributes][:longitude]).to be_a(Float)
+    expect(throne[:attributes][:directions]).to be_a(String)
+    expect(throne[:attributes][:baby_changing_station]).to be_a(String)
+    expect(throne[:attributes][:bathroom_style]).to be_a(String)
+    expect(throne[:attributes][:key_code_required]).to be_a(String)
   end
 
-  it 'can create an item' do
-    create_list(:merchant, 1)
-    get '/api/v1/items'
+  it 'can create a throne' do
 
-    item_params = ({
-                name: 'Super Big Big Mac',
-                description: 'Burger',
-                unit_price: '50.0',
-                merchant_id: Merchant.first.id
+    throne_room_params = ({
+      name: "Tom's",
+      address: "123 ST. Firgle",
+      latitude: 10.837,
+      longitude: 10.837,
+      directions: "in the back",
+      baby_changing_station: 1,
+      bathroom_style: 1,
+      key_code_required: 1
               })
     headers = {"CONTENT_TYPE" => "application/json"}
 
-    post "/api/v1/items", headers: headers, params: JSON.generate(item: item_params)
-    created_item = Item.last
+    post "/api/v1/throne_rooms", headers: headers, params: JSON.generate(throne_room: throne_room_params)
+    created_throne = ThroneRoom.last
 
     expect(response).to be_successful
-    expect(created_item.name).to eq(item_params[:name])
-    expect(created_item.description).to eq(item_params[:description])
-    expect(created_item.unit_price.to_s).to eq(item_params[:unit_price])
-    expect(created_item.merchant_id).to eq(item_params[:merchant_id])
+    expect(created_throne.name).to eq(throne_room_params[:name])
+    expect(created_throne.address).to eq(throne_room_params[:address])
+    expect(created_throne.latitude).to eq(throne_room_params[:latitude])
+    expect(created_throne.longitude).to eq(throne_room_params[:longitude])
+    expect(created_throne.directions).to eq(throne_room_params[:directions])
+    expect(created_throne.baby_changing_station).to eq("true")
+    expect(created_throne.bathroom_style).to eq("multi-stall F")
+    expect(created_throne.key_code_required).to eq("true")
   end
 
-  it 'can update an item' do
-    merchant_id = create(:merchant).id
-    id = create(:item, merchant_id: merchant_id).id
+  it 'can update a throne' do
+    id = create(:throne_room).id
 
-    item_params = { name: "Book" }
+    throne_room_params = { name: "Book Store" }
     headers = {"CONTENT_TYPE" => "application/json"}
 
-    patch "/api/v1/items/#{id}", headers: headers, params: JSON.generate(item: item_params, merchant_id: merchant_id)
-    item = Item.find_by(id: id)
+    patch "/api/v1/throne_rooms/#{id}", headers: headers, params: JSON.generate(throne_room: throne_room_params)
+    throne_room = ThroneRoom.find_by(id: id)
 
     expect(response).to be_successful
-    expect(item[:name]).to eq("Book")
+    expect(throne_room[:name]).to eq("Book Store")
   end
 
   it 'can delete an item' do
-    merchant_id = create(:merchant).id
-    id = create(:item, merchant_id: merchant_id).id
-    expect(Item.count).to eq(1)
+    id = create(:throne_room).id
+    expect(ThroneRoom.count).to eq(1)
 
-    delete "/api/v1/items/#{id}"
+    delete "/api/v1/throne_rooms/#{id}"
 
     expect(response).to be_successful
-    expect(Item.count).to eq(0)
-    expect{Item.find(id)}.to raise_error(ActiveRecord::RecordNotFound)
+    expect(ThroneRoom.count).to eq(0)
+    expect{ThroneRoom.find(id)}.to raise_error(ActiveRecord::RecordNotFound)
   end
 end

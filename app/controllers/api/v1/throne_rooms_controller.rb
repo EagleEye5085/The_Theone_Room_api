@@ -9,7 +9,7 @@ class Api::V1::ThroneRoomsController < ApplicationController
   end
 
   def create
-    render json: ThroneRoomSerializer.new(throne_room_params), status: :created
+    render json: ThroneRoomSerializer.new(ThroneRoom.create(throne_room_params)), status: :created
   end
 
   def update
@@ -24,6 +24,6 @@ class Api::V1::ThroneRoomsController < ApplicationController
 
   private
   def throne_room_params
-    params(:name, :address, :latitude, :longitude,:directions, :baby_changing_station, :bathroom_style, :key_code_required)
+    params[:throne_room].permit(:name, :address, :latitude, :longitude,:directions, :baby_changing_station, :bathroom_style, :key_code_required)
   end
 end

@@ -6,9 +6,9 @@ class CreateThroneRoom < ActiveRecord::Migration[5.2]
       t.float :latitude
       t.float :longitude
       t.string :directions
-      t.boolean :baby_changing_station
+      t.integer :baby_changing_station
       t.integer :bathroom_style
-      t.boolean :key_code_required
+      t.integer :key_code_required
 
       t.timestamps
     end

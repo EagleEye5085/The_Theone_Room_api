@@ -34,9 +34,9 @@ ActiveRecord::Schema.define(version: 2022_09_14_210909) do
     t.float "latitude"
     t.float "longitude"
     t.string "directions"
-    t.boolean "baby_changing_station"
+    t.integer "baby_changing_station"
     t.integer "bathroom_style"
-    t.boolean "key_code_required"
+    t.integer "key_code_required"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

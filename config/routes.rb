@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :reviews
-        # get '/user', to: 'review#show'
+      resources :throne_rooms
     end
   end
 end

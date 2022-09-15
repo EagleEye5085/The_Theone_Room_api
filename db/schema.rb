@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2022_09_14_210909) do
   create_table "throne_rooms", force: :cascade do |t|
     t.string "name"
     t.string "address"
-    t.float "lattitude"
+    t.float "latitude"
     t.float "longitude"
     t.string "directions"
     t.boolean "baby_changing_station"

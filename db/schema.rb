@@ -32,12 +32,12 @@ ActiveRecord::Schema.define(version: 2022_09_14_210909) do
   create_table "throne_rooms", force: :cascade do |t|
     t.string "name"
     t.string "address"
-    t.float "lattitude"
+    t.float "latitude"
     t.float "longitude"
     t.string "directions"
-    t.boolean "baby_changing_station"
+    t.integer "baby_changing_station"
     t.integer "bathroom_style"
-    t.boolean "key_code_required"
+    t.integer "key_code_required"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

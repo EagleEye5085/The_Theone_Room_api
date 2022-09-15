@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+what is one example of you working as a team member on a project?
+what is one example of how you resolved a conflict with a team member?

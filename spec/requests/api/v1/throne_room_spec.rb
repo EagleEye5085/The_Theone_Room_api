@@ -101,4 +101,45 @@ RSpec.describe 'throne room api requests' do
     expect(ThroneRoom.count).to eq(0)
     expect{ThroneRoom.find(id)}.to raise_error(ActiveRecord::RecordNotFound)
   end
+
+  it 'returns 404 if throne room is not found' do
+    throne_room = create(:throne_room)
+    id = 90654501
+
+    get "/api/v1/throne_rooms/#{id}"
+
+    expect(response).to have_http_status(404)
+
+  end
+
+  it 'returns 404 if throne room cannot be created' do
+    throne_room_params = ({
+      name: "Tom's",
+      address: "123 ST. Firgle",
+      latitude: 10.837,
+      longitude: 10.837,
+      directions: "",
+      baby_changing_station: 1,
+      bathroom_style: 1,
+      key_code_required: 1
+              })
+
+    headers = {"CONTENT_TYPE" => "application/json"}
+
+    post "/api/v1/throne_rooms", headers: headers, params: JSON.generate(throne_room: throne_room_params)
+
+    expect(response).to have_http_status(404)
+  end
+
+  it 'returns 404 if throne room cannot be updated' do
+    id = create(:throne_room).id
+    previous_address = ThroneRoom.last.address
+    throne_room_params = { address: "" }
+    headers = {"CONTENT_TYPE" => "application/json"}
+
+    patch "/api/v1/throne_rooms/#{id}", headers: headers, params: JSON.generate(throne_room:throne_room_params)
+    throne_room = ThroneRoom.find_by(id: id)
+
+    expect(response).to have_http_status(404)
+  end
 end

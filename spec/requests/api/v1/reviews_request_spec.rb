@@ -25,7 +25,7 @@ describe 'Reviews API' do
     end
   end
 
-  it 'can get one throne_room by its ID' do
+  it 'can get one review by its ID' do
     id = create(:review).id
 
     get "/api/v1/reviews/#{id}"
@@ -55,7 +55,7 @@ describe 'Reviews API' do
                     privacy: Faker::Number.between(from: 1, to: 5),
                     other_comments: Faker::Lorem.paragraph(sentence_count: 2, supplemental: true),
                     throne_room_id: create(:throne_room).id,
-                    user_id: Faker::Number.digit 
+                    user_id: Faker::Number.digit
                   })
 
     headers = {"CONTENT_TYPE" => "application/json"}

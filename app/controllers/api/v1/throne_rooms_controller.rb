@@ -5,21 +5,40 @@ class Api::V1::ThroneRoomsController < ApplicationController
   end
 
   def show
-    render json: ThroneRoomSerializer.new(ThroneRoom.find(params[:id]))
+    if ThroneRoom.exists?(params[:id])
+      render json: ThroneRoomSerializer.new(ThroneRoom.find(params[:id]))
+    else
+      render json: {
+        error: 'Throne Room not available'
+        }, status: 404
+    end
   end
 
   def create
-    render json: ThroneRoomSerializer.new(ThroneRoom.create(throne_room_params)), status: :created
+    throne_room = ThroneRoom.new(throne_room_params)
+    # binding.pry
+    if throne_room.save
+      render json: ThroneRoomSerializer.new(throne_room), status: 201
+    else
+      render status: 404
+    end
   end
 
   def update
-    ThroneRoom.find(params[:id]).update(throne_room_params)
-    render json: ThroneRoomSerializer.new(ThroneRoom.find(params[:id])), status: :accepted
+    throne_room = ThroneRoom.find(params[:id])
+    if throne_room.update(throne_room_params)
+      render json: ThroneRoomSerializer.new(ThroneRoom.find(params[:id])), status: :accepted
+    else
+      render status: 404
+    end
   end
 
   def destroy
-    render json: ThroneRoomSerializer.new(ThroneRoom.find(params[:id]))
-    ThroneRoom.find(params[:id]).destroy
+    if ThroneRoom.exists?(params[:id])
+      ThroneRoom.destroy(params[:id])
+    else
+      render status: 404
+    end
   end
 
   private

@@ -92,7 +92,7 @@ describe 'Reviews API' do
   end
 
   it 'returns 404 if review is not found' do
-    throne_room = create(:throne_room)
+    review = create(:review)
     id = 90654501
 
     get "/api/v1/reviews/#{id}"
@@ -105,7 +105,7 @@ describe 'Reviews API' do
   end
 
   it 'returns 404 if review cannot be created' do
-    throne_room = create(:throne_room)
+    review = create(:review)
     review_params = ({
                     cleanliness: Faker::Number.between(from: 1, to: 5),
                     ambiance: Faker::Number.between(from: 1, to: 5),

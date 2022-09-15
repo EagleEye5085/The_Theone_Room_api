@@ -142,4 +142,16 @@ RSpec.describe 'throne room api requests' do
 
     expect(response).to have_http_status(404)
   end
+
+  it 'returns 404 if throne room cannot be destroyed' do
+    id = 45672987354978
+
+    headers = {"CONTENT_TYPE" => "application/json"}
+
+    delete "/api/v1/throne_rooms/#{id}", headers: headers
+
+    expect(response).to have_http_status(404)
+  end
+
+
 end

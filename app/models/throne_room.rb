@@ -19,4 +19,9 @@ class ThroneRoom < ApplicationRecord
 
   after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
 
+  def close_to(address)
+    
+
+  end
+
 end

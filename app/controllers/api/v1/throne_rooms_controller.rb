@@ -1,6 +1,7 @@
 class Api::V1::ThroneRoomsController < ApplicationController
 
   def index
+    @thrones = ThroneRoom.close_to(address)
     render json: ThroneRoomSerializer.new(ThroneRoom.all)
   end
 

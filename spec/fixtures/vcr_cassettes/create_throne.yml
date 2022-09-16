@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://geocoder.ca/?callback=test&geoit=xml&jsonp=1&locate=3984%20Red%20Cedar%20Dr,%20Highlands%20Ranch,%20CO%2080126&showpostal=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Sep 2022 21:27:03 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - xyzh=xyzh; path=/; expires=Mon, 11-Sep-2023 21:27:01 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=44GuquRYMjt3L89oQ7SiyJpUFx8801LiX4cR%2FLj1DkXLmcMJczjg53VAUrdQYy13%2BSKHpshRA8UC4Q0mGWhSE7CA0a816%2FSrMjqAFmEjpgmpyNJfLTRLgEUyJCQb"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 74bcaf084a4c2c2c-ORD
+    body:
+      encoding: ASCII-8BIT
+      string: 'test({   "standard" : {      "staddress" : "Red Cedar Dr",      "stnumber"
+        : "3984",      "prov" : "CO",      "city" : "Highlands Ranch",      "postal"
+        : "80126",      "confidence" : "1"   },   "longt" : "-104.941680",   "TimeZone"
+        : "America/Denver",   "postal" : "80126",   "AreaCode" : "720,303",   "latt"
+        : "39.526359"});'
+  recorded_at: Fri, 16 Sep 2022 21:27:03 GMT
+recorded_with: VCR 6.1.0

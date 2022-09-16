@@ -1,0 +1,146 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://geocoder.ca/?callback=test&geoit=xml&jsonp=1&locate=6675%20business%20center%20dr,%20highlands%20ranch,%20co%2080130&showpostal=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Sep 2022 21:24:32 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - xyzh=xyzh; path=/; expires=Mon, 11-Sep-2023 21:24:32 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=%2BCQz5Cl2DXAYPKe%2BCko9HOOpsLXCemj9hNRQC%2FvBjXylxYKdlqeeM7my2JkWxrjtRWNaPtPMYC1gktIqZRELDq0s9oKgAJ0hvdi1AgUDpCf9D2nj%2FXu%2FxpCzt%2B1X"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 74bcab65de40637e-ORD
+    body:
+      encoding: ASCII-8BIT
+      string: 'test({   "standard" : {      "staddress" : "Business Center Dr",      "stnumber"
+        : "6675",      "prov" : "CO",      "city" : "Highlands Ranch",      "postal"
+        : "80130",      "confidence" : "0.8"   },   "longt" : "-104.910776",   "TimeZone"
+        : "America/Denver",   "postal" : "80130",   "AreaCode" : "720,303",   "latt"
+        : "39.562539"});'
+  recorded_at: Fri, 16 Sep 2022 21:24:32 GMT
+- request:
+    method: get
+    uri: http://geocoder.ca/?callback=test&geoit=xml&jsonp=1&locate=6707%20s%20vine%20st%20ste%20d,%20centennial,%20co%2080122&showpostal=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Sep 2022 21:24:33 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - xyzh=xyzh; path=/; expires=Mon, 11-Sep-2023 21:24:32 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=BnNszlkXWt%2FrUnF41uLJoqXKzRoIu46Q6AWuIv49yQpdh7cAhJgMhOmd%2BTTtpG6o50Ze0VF0qvCgt0SAFZ78zt9Ah5BPmOjCRLBBbQznLYvN2kwhBY0z8MMT8VCy"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 74bcab686f87f232-ORD
+    body:
+      encoding: ASCII-8BIT
+      string: 'test({   "standard" : {      "staddress" : "S Vine St",      "stnumber"
+        : "6707",      "prov" : "CO",      "city" : "Centennial",      "postal" :
+        "80122",      "confidence" : "0.8"   },   "longt" : "-104.965107",   "TimeZone"
+        : "America/Denver",   "postal" : "80122",   "AreaCode" : "720,303",   "latt"
+        : "39.594632"});'
+  recorded_at: Fri, 16 Sep 2022 21:24:33 GMT
+- request:
+    method: get
+    uri: http://geocoder.ca/?callback=test&geoit=xml&jsonp=1&locate=6300%20s%20main%20st%20suite%20N101,%20aurora,%20co%2080016&showpostal=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Sep 2022 21:24:36 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - xyzh=xyzh; path=/; expires=Mon, 11-Sep-2023 21:24:33 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=2E9cWNzLY2zdN%2B34btNFcuHG9UBI0MWWlw2nJpQsY0DXLeK4rda8yxoTbfFoLzQaTN%2FH%2BJOl77DFlR9NF04CYrGsbgGQveCOFkzjtHtEMBEaWQtKOHsmOTbyrxfg"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 74bcab6c8883e24e-ORD
+    body:
+      encoding: ASCII-8BIT
+      string: 'test({   "standard" : {      "staddress" : "S Main St",      "stnumber"
+        : "6300",      "prov" : "CO",      "city" : "Aurora",      "postal" : "80016-5381",      "confidence"
+        : "0.8"   },   "longt" : "-104.709213",   "TimeZone" : "America/Denver",   "postal"
+        : "80016-5381",   "AreaCode" : "720,303",   "latt" : "39.601628"});'
+  recorded_at: Fri, 16 Sep 2022 21:24:36 GMT
+recorded_with: VCR 6.1.0

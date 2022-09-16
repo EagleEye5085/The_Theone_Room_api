@@ -1,14 +1,15 @@
 Geocoder.configure(
   # Geocoding options
-  timeout: 3,                 # geocoding service timeout (secs)
-  lookup: :nominatim,         # name of geocoding service (symbol)
+  timeout: 25,                 # geocoding service timeout (secs)
+  lookup: :geocoder_ca,         # name of geocoding service (symbol)
   ip_lookup: :ipinfo_io,      # name of IP address geocoding service (symbol)
   language: :en,              # ISO-639 language code
-  use_https: false,           # use HTTPS for lookup requests? (if supported)
-  http_proxy: nil,            # HTTP proxy server (user:pass@host:port)
-  https_proxy: nil,           # HTTPS proxy server (user:pass@host:port)
-  api_key: nil,               # API key for geocoding service
-  cache: nil,                 # cache object (must respond to #[], #[]=, and #del)
+  # use_https: false,           # use HTTPS for lookup requests? (if supported)
+  # http_proxy: nil,            # HTTP proxy server (user:pass@host:port)
+  # https_proxy: nil,           # HTTPS proxy server (user:pass@host:port)
+  # api_key: nil,               # API key for geocoding service
+  # cache: nil,                 # cache object (must respond to #[], #[]=, and #del)
+  # http_headers: { "Turing school project" => "thomasturner482@yahoo.com" },
 
   # Exceptions that should not be rescued by default
   # (if you want to implement custom error handling);

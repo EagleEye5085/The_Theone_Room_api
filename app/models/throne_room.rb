@@ -2,8 +2,6 @@ class ThroneRoom < ApplicationRecord
 
   validates_presence_of :name
   validates_presence_of :address
-  validates_presence_of :latitude
-  validates_presence_of :longitude
   validates_presence_of :directions
   validates_presence_of :baby_changing_station
   validates_presence_of :bathroom_style
@@ -15,5 +13,15 @@ class ThroneRoom < ApplicationRecord
 
 
   has_many :reviews
+
+
+  geocoded_by :address
+
+  after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
+
+  def close_to(address)
+    
+
+  end
 
 end

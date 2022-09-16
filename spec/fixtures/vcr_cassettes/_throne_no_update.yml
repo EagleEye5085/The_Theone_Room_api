@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://geocoder.ca/?callback=test&geoit=xml&jsonp=1&locate=6675%20business%20center%20dr,%20highlands%20ranch,%20co%2080130&showpostal=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Sep 2022 21:27:15 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - xyzh=xyzh; path=/; expires=Mon, 11-Sep-2023 21:27:13 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=Sazx3igxAIX8tnw15auVpQiAIT%2BqtCfzj2zlo5z9HDHia%2BjfJObg6UdulFAKyVkxbjr9EgiNmomvt1r8NxMs%2B3COSbs9AIV2dq7h9Oj%2BNmOUOEjdTt82MCkK%2BWQy"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 74bcaf51ea622c38-ORD
+    body:
+      encoding: ASCII-8BIT
+      string: 'test({   "standard" : {      "staddress" : "Business Center Dr",      "stnumber"
+        : "6675",      "prov" : "CO",      "city" : "Highlands Ranch",      "postal"
+        : "80130",      "confidence" : "0.8"   },   "longt" : "-104.910776",   "TimeZone"
+        : "America/Denver",   "postal" : "80130",   "AreaCode" : "720,303",   "latt"
+        : "39.562539"});'
+  recorded_at: Fri, 16 Sep 2022 21:27:15 GMT
+recorded_with: VCR 6.1.0

@@ -16,7 +16,6 @@ class Api::V1::ThroneRoomsController < ApplicationController
 
   def create
     throne_room = ThroneRoom.new(throne_room_params)
-    # binding.pry
     if throne_room.save
       render json: ThroneRoomSerializer.new(throne_room), status: 201
     else

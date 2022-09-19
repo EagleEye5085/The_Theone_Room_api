@@ -169,4 +169,31 @@ RSpec.describe 'throne room api requests' do
       expect(response).to have_http_status(404)
     end
   end
+
+  it 'can order by distance from a given point' do
+    # request.remote_ip = '59.152.62.114'
+
+    VCR.use_cassette('throne distance') do
+      t1 = ThroneRoom.create(name: "walmart bathroom", address: "6675 business center dr, highlands ranch, co 80130", directions: "that way", baby_changing_station: 0, bathroom_style: 1, key_code_required: 1)
+      t2 = ThroneRoom.create(name: "best buy bathroom", address: "6707 s vine st ste d, centennial, co 80122", directions: "this way", baby_changing_station: 1, bathroom_style: 1, key_code_required: 1)
+      t3 = ThroneRoom.create(name: "barnes and noble bathroom", address: "6300 s main st suite N101, aurora, co 80016", directions: "over yonder", baby_changing_station: 1, bathroom_style: 0, key_code_required: 1)
+      t4 = ThroneRoom.create(name: "Revival Denver Public House", address: "630 E 17th Ave, Denver, CO 80203", directions: "over by the bathroom", baby_changing_station: 0, bathroom_style: 1, key_code_required: 0)
+      t5 = ThroneRoom.create(name: "Tune Skateboard", address: "1623 Pearl St, Denver, CO 80203", directions: "over by the park", baby_changing_station: 1, bathroom_style: 1, key_code_required: 1)
+      t6 = ThroneRoom.create(name: "Denver Botanic Gardens", address: "1007 York St, Denver, CO 80206", directions: "in the garden", baby_changing_station: 1, bathroom_style: 3, key_code_required: 1)
+      t7 = ThroneRoom.create(name: "Blue Pan Pizza", address: "3509 E 12th Ave, Denver, CO 80206", directions: "in the garden", baby_changing_station: 1, bathroom_style: 2, key_code_required: 0)
+
+      get '/api/v1/throne_rooms/closest_five', env: { "REMOTE_ADDR": '76.131.44.131' }
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
+      thrones = response_body[:data]
+
+      expect(thrones.count).to eq(5)
+      expect(thrones[0][:attributes][:name]).to eq("barnes and noble bathroom")
+      expect(thrones[1][:attributes][:name]).to eq("walmart bathroom")
+      expect(thrones[2][:attributes][:name]).to eq("best buy bathroom")
+      expect(thrones[3][:attributes][:name]).to eq("Blue Pan Pizza")
+      expect(thrones[4][:attributes][:name]).to eq("Denver Botanic Gardens")
+    end
+  end
+
 end

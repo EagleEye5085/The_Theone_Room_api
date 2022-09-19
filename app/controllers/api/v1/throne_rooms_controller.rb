@@ -1,11 +1,18 @@
 class Api::V1::ThroneRoomsController < ApplicationController
 
   def index
+    binding.pry
     # @thrones = ThroneRoom.close_to(address)
     render json: ThroneRoomSerializer.new(ThroneRoom.all)
   end
 
+  def closest_five
+    # binding.pry
+    render json: ThroneRoomSerializer.new(ThroneRoom.near(Geocoder.search(request.remote_ip, ).first.coordinates).limit(5))
+  end
+
   def show
+    binding.pry
     if ThroneRoom.exists?(params[:id])
       render json: ThroneRoomSerializer.new(ThroneRoom.find(params[:id]))
     else

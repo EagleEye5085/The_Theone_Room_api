@@ -19,10 +19,4 @@ class ThroneRoom < ApplicationRecord
 
   after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
 
-  def close_to#(address)
-    # return nil if arr.empty?
-    # arr.min_by  { |e| e <= target ? [0, target-e] : [1, e-target] }
-    ThroneRoom.near
-  end
-
 end

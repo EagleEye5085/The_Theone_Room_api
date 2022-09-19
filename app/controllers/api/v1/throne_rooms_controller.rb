@@ -48,6 +48,8 @@ class Api::V1::ThroneRoomsController < ApplicationController
 
   private
   def throne_room_params
+    params[:throne_room][:baby_changing_station] = params[:throne_room][:baby_changing_station].to_i
+    params[:throne_room][:key_code_required] = params[:throne_room][:key_code_required].to_i
     params[:throne_room].permit(:name, :address, :latitude, :longitude,:directions, :baby_changing_station, :bathroom_style, :key_code_required)
   end
 end

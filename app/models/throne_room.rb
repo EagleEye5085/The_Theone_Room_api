@@ -22,7 +22,7 @@ class ThroneRoom < ApplicationRecord
   def close_to#(address)
     # return nil if arr.empty?
     # arr.min_by  { |e| e <= target ? [0, target-e] : [1, e-target] }
-    Venue.near
+    ThroneRoom.near
   end
 
 end

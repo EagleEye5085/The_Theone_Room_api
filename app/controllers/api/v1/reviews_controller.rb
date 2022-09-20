@@ -40,6 +40,15 @@ class Api::V1::ReviewsController < ApplicationController
     end
   end
 
+  def recent
+    if params[:throne_room]
+      # binding.pry
+      render json: ReviewSerializer.new(Review.where("throne_room_id = ?", params[:throne_room]).order(created_at: :desc).limit(5))
+    else
+      render status: 404
+    end
+  end
+
   private
   def review_params
     params.require(:review).permit(

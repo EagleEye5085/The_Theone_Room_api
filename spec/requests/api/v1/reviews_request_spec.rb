@@ -148,4 +148,30 @@ describe 'Reviews API' do
       expect(response).to have_http_status(404)
     end
   end
+
+  it 'returns the 5 most recent reviews' do
+    VCR.use_cassette('recent reviews') do
+      review = create(:review)
+      tr_id = review.throne_room_id
+      8.times do
+        Review.create!( "cleanliness":1, "ambiance": 1, "tp_quality":1, "privacy":1,  "user_id":1,  "other_comments": "test",  "throne_room_id": tr_id)
+      end
+      get "/api/v1/reviews/recent?throne_room=#{tr_id}"
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
+      reviews = response_body[:data]
+
+      expect(reviews.count).to eq(5)
+      expect(reviews.first[:id].to_i).to eq(Review.last[:id])
+      expect(reviews.pluck(:id).include?(review.id)).to eq(false)
+    end
+  end
+
+  it 'returns 404 if the throne room cannot be found' do
+    VCR.use_cassette('reviews no throne') do
+      get "/api/v1/reviews/recent"
+
+      expect(response).to have_http_status(404)
+    end
+  end
 end

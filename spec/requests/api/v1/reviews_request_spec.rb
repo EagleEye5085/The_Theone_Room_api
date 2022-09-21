@@ -91,12 +91,12 @@ describe 'Reviews API' do
       tr = ThroneRoom.create(name: "walmart bathroom", address: "6675 business center dr, highlands ranch, co 80130", directions: "that way", baby_changing_station: 0, bathroom_style: 1, key_code_required: 1)
       id = create(:review).id
       previous_cleanliness = Review.last.cleanliness
-      review_params = { cleanliness: Faker::Number.positive }
+      review_params = { cleanliness: Faker::Number.digit }
       headers = {"CONTENT_TYPE" => "application/json"}
 
       patch "/api/v1/throne_rooms/#{tr.id}/reviews/#{id}", headers: headers, params: JSON.generate({review: review_params})
       review = Review.find_by(id: id)
-
+      # binding.pry
       expect(response).to be_successful
       expect(review.cleanliness).to_not eq(previous_cleanliness)
       expect(review.cleanliness).to eq(review.cleanliness)
@@ -146,7 +146,7 @@ describe 'Reviews API' do
       tr = ThroneRoom.create(name: "walmart bathroom", address: "6675 business center dr, highlands ranch, co 80130", directions: "that way", baby_changing_station: 0, bathroom_style: 1, key_code_required: 1)
       id = create(:review).id
       previous_cleanliness = Review.last.cleanliness
-      review_params = { cleanliness: " " }
+      review_params = { cleanliness: "hello" }
       headers = {"CONTENT_TYPE" => "application/json"}
 
       patch "/api/v1/throne_rooms/#{tr.id}/reviews/#{id}", headers: headers, params: JSON.generate({review: review_params})

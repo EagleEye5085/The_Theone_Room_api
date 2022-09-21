@@ -24,6 +24,7 @@ class Api::V1::ReviewsController < ApplicationController
   end
 
   def update
+    # binding.pry
     review = Review.find(params[:id])
     if review.update(review_params)
       render json: ReviewSerializer.new(Review.find(params[:id]))
@@ -51,13 +52,13 @@ class Api::V1::ReviewsController < ApplicationController
   private
   def review_params
     # binding.pry
-    params[:review][:ambiance] = params[:review][:ambiance].to_i
-    params[:review][:cleanliness] = params[:review][:cleanliness].to_i
-    params[:review][:privacy] = params[:review][:privacy].to_i
-    params[:review][:tp_quality] = params[:review][:tp_quality].to_i
-    # params[:review][:accessibility] = params[:review][:accessibility].to_i
-    params[:review][:throne_room_id] = params[:review][:throne_room_id].to_i
-    params[:review][:user_id] = params[:review][:user_id].to_i
+    params[:review][:ambiance] = params[:review][:ambiance].to_i if params[:review][:ambiance].to_i > 0
+    params[:review][:cleanliness] = params[:review][:cleanliness].to_i if params[:review][:cleanliness].to_i > 0
+    params[:review][:privacy] = params[:review][:privacy].to_i if params[:review][:privacy].to_i > 0
+    params[:review][:tp_quality] = params[:review][:tp_quality].to_i if params[:review][:tp_quality].to_i > 0
+    params[:review][:accessibility] = params[:review][:accessibility].to_i if params[:review][:accessibility].to_i > 0
+    params[:review][:throne_room_id] = params[:review][:throne_room_id].to_i if params[:review][:throne_room_id].to_i > 0
+    params[:review][:user_id] = params[:review][:user_id].to_i if params[:review][:user_id].to_i > 0
     # binding.pry
     params.require(:review).permit(
                             :cleanliness,

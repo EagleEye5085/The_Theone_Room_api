@@ -24,7 +24,9 @@ class ThroneRoom < ApplicationRecord
   end
 
   def overall_averages
-    reviews.pluck.sum('avg(cleanliness) * avg(ambiance) * avg(tp_quality) * avg(privacy)') / 4
+    self.review_averages.sum / self.review_averages.count
   end
+
+ 
 
 end

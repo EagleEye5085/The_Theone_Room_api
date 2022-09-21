@@ -174,4 +174,27 @@ describe 'Reviews API' do
       expect(response).to have_http_status(404)
     end
   end
+
+  it 'has averages of attributes for reviews' do
+    VCR.use_cassette('review averages') do
+      # review = create(:review)
+      t1 = ThroneRoom.create(name: "walmart bathroom", address: "6675 business center dr, highlands ranch, co 80130", directions: "that way", baby_changing_station: 0, bathroom_style: 1, key_code_required: 1)
+      tr_id = t1.id
+        Review.create!( "cleanliness":1, "ambiance": 1, "tp_quality":1, "privacy":2,  "user_id":1,  "other_comments": "eh",  "throne_room_id": tr_id)
+        Review.create!( "cleanliness":2, "ambiance": 3, "tp_quality":1, "privacy":1,  "user_id":2,  "other_comments": "meh",  "throne_room_id": tr_id)
+        Review.create!( "cleanliness":1, "ambiance": 2, "tp_quality":1, "privacy":1,  "user_id":3,  "other_comments": "it was alright",  "throne_room_id": tr_id)
+        Review.create!( "cleanliness":2, "ambiance": 1, "tp_quality":1, "privacy":2,  "user_id":4,  "other_comments": "ugh",  "throne_room_id": tr_id)
+
+      get "/api/v1/throne_rooms/reviews/review_averages?throne_room=#{tr_id}"
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
+      reviews = response_body[:data]
+
+      expect(reviews.review_averages.first).to eq(1.5)
+      expect(reviews.review_averages.second).to eq(1.75)
+      expect(reviews.review_averages.third).to eq(1)
+      expect(reviews.review_averages.fourth).to eq(1.5)
+    end
+  end
+
 end

@@ -2,7 +2,7 @@
 
 ## About This Project:
 
-[Relocate08](https://github.com/Relocate08) provides users with the ability to enter an address in order to receive curated information for services near their new home.
+[The Thorne Room](https://github.com/Relocate08) provides users with the ability to enter an address in order to receive curated information for services near their new home.
 
 Relocate08 is an application that utilizes a frontend, backend, and microservice to consume and expose API data sourced from Yelp. This backend is responsible for receiving requests from the frontend, submiting requests to the microservice which then returns API data for the backend to package and return to the frontend for viewing.
 

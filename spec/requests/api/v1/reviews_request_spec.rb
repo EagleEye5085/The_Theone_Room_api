@@ -192,15 +192,17 @@ describe 'Reviews API' do
         Review.create!( "cleanliness":1, "ambiance": 2, "tp_quality":1, "privacy":1,  "user_id":3,  "other_comments": "it was alright",  "throne_room_id": tr_id)
         Review.create!( "cleanliness":2, "ambiance": 1, "tp_quality":1, "privacy":2,  "user_id":4,  "other_comments": "ugh",  "throne_room_id": tr_id)
 
-      get "/api/v1/throne_rooms/reviews/review_averages?throne_room=#{tr_id}"
+      get "/api/v1/throne_rooms/#{tr_id}/reviews/review_averages"
 
-      response_body = JSON.parse(response.body, symbolize_names: true)
-      reviews = response_body[:data]
+      # binding.pry
 
-      expect(reviews.review_averages.first).to eq(1.5)
-      expect(reviews.review_averages.second).to eq(1.75)
-      expect(reviews.review_averages.third).to eq(1)
-      expect(reviews.review_averages.fourth).to eq(1.5)
+      response_body = JSON.parse(response.body)
+      # reviews = response_body[:data]
+
+      expect(response_body.first).to eq("1.5")
+      expect(response_body.second).to eq("1.75")
+      expect(response_body.third).to eq("1.0")
+      expect(response_body.fourth).to eq("1.5")
     end
   end
 
@@ -214,12 +216,12 @@ describe 'Reviews API' do
         Review.create!( "cleanliness":1, "ambiance": 2, "tp_quality":1, "privacy":1,  "user_id":3,  "other_comments": "it was alright",  "throne_room_id": tr_id)
         Review.create!( "cleanliness":2, "ambiance": 1, "tp_quality":1, "privacy":2,  "user_id":4,  "other_comments": "ugh",  "throne_room_id": tr_id)
 
-      get "/api/v1/throne_rooms/reviews/review_averages?throne_room=#{tr_id}"
+      get "/api/v1/throne_rooms/#{tr_id}/reviews/overall_averages"
 
-      response_body = JSON.parse(response.body, symbolize_names: true)
-      reviews = response_body[:data]
+      response_body = JSON.parse(response.body)
+      # reviews = response_body[:data]
 
-      expect(reviews.overall_averages.first).to eq(1.4)
+      expect(response_body).to eq("1.4375")
     end
   end
 

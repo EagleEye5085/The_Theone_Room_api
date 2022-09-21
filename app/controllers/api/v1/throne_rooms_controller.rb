@@ -48,7 +48,13 @@ class Api::V1::ThroneRoomsController < ApplicationController
 
   def review_averages
     # binding.pry
-    render json: AverageSerializer.new(ThroneRoom.find(params[:id]).review_averages)
+    # render json: AverageSerializer.new(ThroneRoom.find(params[:id]).review_averages)
+    render json: (ThroneRoom.find(params[:id]).review_averages)
+  end
+
+  def overall_averages
+    # binding.pry
+    render json: (ThroneRoom.find(params[:id]).overall_averages)
   end
 
   private

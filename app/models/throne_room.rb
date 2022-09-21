@@ -19,4 +19,8 @@ class ThroneRoom < ApplicationRecord
 
   after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
 
+  def review_averages
+    reviews.pluck('avg(cleanliness), avg(ambiance), avg(tp_quality), avg(privacy)').flatten
+  end
+
 end

@@ -1,3 +1,4 @@
+require 'pry'
 class Review < ApplicationRecord
 
   validates_presence_of :cleanliness

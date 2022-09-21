@@ -46,6 +46,11 @@ class Api::V1::ThroneRoomsController < ApplicationController
     end
   end
 
+  def review_averages
+    # binding.pry
+    render json: AverageSerializer.new(ThroneRoom.find(params[:id]).review_averages)
+  end
+
   private
   def throne_room_params
     params[:throne_room][:baby_changing_station] = params[:throne_room][:baby_changing_station].to_i

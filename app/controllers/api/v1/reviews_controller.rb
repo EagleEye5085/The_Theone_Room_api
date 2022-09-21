@@ -49,6 +49,10 @@ class Api::V1::ReviewsController < ApplicationController
     end
   end
 
+  # def averages
+  #   render json: AverageSerializer.new(Review.tr_average)
+  # end
+
   private
   def review_params
     params.require(:review).permit(

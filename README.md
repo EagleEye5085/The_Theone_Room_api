@@ -2,21 +2,21 @@
 
 ## About This Project:
 
-[The Thorne Room](https://github.com/Relocate08) provides users with the ability to enter an address in order to receive curated information for services near their new home.
+[The Throne Room](https://github.com/EagleEye5085/The_Throne_Room_api) provides users with the ability to review public restrooms in their area
 
-Relocate08 is an application that utilizes a frontend, backend, and microservice to consume and expose API data sourced from Yelp. This backend is responsible for receiving requests from the frontend, submiting requests to the microservice which then returns API data for the backend to package and return to the frontend for viewing.
+The Throne Room is an application that utilizes a frontend and backend application together they store bathroom locations and reviews displaying them on a map. This backend is responsible for receiving requests from the frontend and converting addresses and ip-addresses to lattitude and longitude.  
 
 ## Table of Contents
-* [Local Setup](https://github.com/Relocate08/Relocate-Back-End-Rails/blob/main/README.md#local-setup)
-* [Deployment](https://github.com/Relocate08/Relocate-Back-End-Rails/blob/main/README.md#deployment-)
-* [Endpoints](https://github.com/Relocate08/Relocate-Back-End-Rails/blob/main/README.md#endpoints)
-* [Schema](https://github.com/Relocate08/Relocate-Back-End-Rails/blob/main/README.md#schema-)
-* [Authors](https://github.com/Relocate08/Relocate-Back-End-Rails/blob/main/README.md#authors)
+* [Local Setup](https://github.com/EagleEye5085/The_Throne_Room_api/blob/main/README.md#local-setup)
+* [Deployment](https://github.com/EagleEye5085/The_Throne_Room_api/blob/main/README.md#deployment-)
+* [Endpoints](https://github.com/EagleEye5085/The_Throne_Room_api/blob/main/README.md#endpoints)
+* [Schema](https://github.com/EagleEye5085/The_Throne_Room_api/blob/main/README.md#schema-)
+* [Authors](https://github.com/EagleEye5085/The_Throne_Room_api/blob/main/README.md#authors)
 ## Local Setup:
 
 This project requires:
-- Ruby 2.5.3.
-- Rails 5.2.4.3
+- Ruby 2.7.4
+- Rails 5.2.8
 
 * Fork this repository
 * Clone your fork
@@ -24,48 +24,48 @@ This project requires:
     * `bundle install`
     * `rails db:create`
     * `rails db:migrate`
-* Install Figaro with `bundle exec figaro install` to create an application.yml file locally (this to be updated with any needed ENV variables!!!)
 
-#### Relocate-Back-End utilizes the following gems and libraries in testing:
+#### Throne-Room-Back-End utilizes the following gems and libraries in testing:
 
 - [RSpec](https://github.com/rspec/rspec-rails)
 - [ShouldaMatchers](https://github.com/thoughtbot/shoulda-matchers)
 - [Capybara](https://github.com/teamcapybara/capybara)
 - [SimpleCov](https://github.com/simplecov-ruby/simplecov)
+- [vcr](https://github.com/vcr/vcr)
+- [webmock](https://github.com/bblimke/webmock)
+- [faker](https://github.com/faker-ruby/faker)
+- [factory_bot](https://github.com/thoughtbot/factory_bot)
 
 ## Deployment <a name="deployment"></a>
 
-Relocate-Back-End-Rails is deployed remotely via Heroku (https://relocate-back-end-rails.herokuapp.com/)
+Throne-Room-api is deployed remotely via Heroku (https://the-throne-room-api.herokuapp.com/)
 
 ## Endpoints:
-
-- `get '/:location/utilities/:type'`
-- `get '/:location/recreation/:type'`
-- `get '/:location/homeservices/:type'`
-- `get '/businesses/:id'`
-
-- `get /favorites/:user_id`
-- `post /favorites/:user_id/:yelp_business_id (also requires "business_name" params)`
-- `delete /favorites/:user_id/:yelp_business_id`
-
-- `get /location/:user_id`
-- `post /:location/:user_id`
-- `patch /:location/:user_id`
-- `delete /location/:user_id`
+### Throne Rooms
+- `get '/throne_rooms'`
+- `get '/throne_rooms/:id'`
+- `post '/throne_rooms'`
+- `patch '/throne_rooms/:id'`
+- `delete '/throne_rooms/:id'`
+- `get '/throne_rooms/closest_five'`
+- `get '/throne_rooms/last_five'`
+### Reviews
+- `get '/throne_rooms/:id/reviews'`
+- `get '/throne_rooms/:throne_id/reviews/:id'`
+- `post '/throne_rooms/:id/reviews'`
+- `patch '/throne_rooms/:throne_id/reviews/:id'`
+- `delete '/throne_rooms/:throne_id/reviews/:id'`
+- `get '/throne_rooms/:id/reviews/recent'`
 
 ## Schema <a name="schema"></a>
 
-<img width="667" alt="Relocate BE Schema" src="https://user-images.githubusercontent.com/63476564/104670572-19ab0700-56aa-11eb-81e0-66753a68ac4d.png">
+<img width="667" alt="The Throne Room BE Schema" src="https://user-images.githubusercontent.com/16493270/191601913-2d554c02-75d4-45bd-9937-9656e5fb84a9.png">
 
 
 ## Authors
-  - **Christopher Allbritton** - *Turing Student* - [GitHub Profile](https://github.com/Callbritton) - [Turing Alum Profile](https://alumni.turing.io/alumni/christopher-allbritton) - [LinkedIn](https://www.linkedin.com/in/christopher-allbritton)
-  - **Dani Coleman** - *Turing Student* - [GitHub Profile](https://github.com/dcoleman21) - [Turing Alum Profile](https://alumni.turing.io/alumni/dani-coleman) - [LinkedIn](https://www.linkedin.com/in/dcoleman-21/)
-  - **Kevin Cuadros** - *Turing Student* - [GitHub Profile](https://github.com/kevxo) - [Turing Alum Profile](https://alumni.turing.io/alumni/kevin-david-cuadros) - [LinkedIn](https://www.linkedin.com/in/kevin-cuadros-2bb4551a1/)
-  - **Hanna Davis** - *Turing Student* - [GitHub Profile](https://github.com/Oxalisviolacea) - [Turing Alum Profile](https://alumni.turing.io/alumni/hanna-davis) - [LinkedIn](https://www.linkedin.com/in/hanna-davis/)
-  - **Hope Gochnour** - *Turing Student* - [GitHub Profile](https://github.com/hopesgit) - [Turing Alum Profile](https://alumni.turing.io/alumni/hope-mcgee) - [LinkedIn](https://www.linkedin.com/in/hope-gochnour-3056aa1ba/)
-  - **Jake Heft** - *Turing Student* - [GitHub Profile](https://github.com/jakeheft) - [Turing Alum Profile](https://alumni.turing.io/alumni/jake-heft) - [LinkedIn](https://www.linkedin.com/in/jakeheft/)
-  - **John Kim** - *Turing Student* - [GitHub Profile](https://github.com/abcdefghijohn) - [Turing Alum Profile](https://alumni.turing.io/alumni/john-kim) - [LinkedIn](https://www.linkedin.com/in/abcdefghijohn/)
-  - **Jose Lopez** - *Turing Student* - [GitHub Profile](https://github.com/JoseLopez235) - [Turing Alum Profile](https://alumni.turing.io/alumni/jose-lopez) - [LinkedIn](https://www.linkedin.com/in/jose-lopez-0551a01a1/)
-  - **Brett Sherman** - *Turing Student* - [GitHub Profile](https://github.com/BJSherman80) - [Turing Alum Profile](https://alumni.turing.io/alumni/brett-sherman) - [LinkedIn](https://www.linkedin.com/in/brettshermanll/)
-  - **Zach Stearns** - *Turing Student* - [GitHub Profile](https://github.com/Stearnzy) - [Turing Alum Profile](https://alumni.turing.io/alumni/zach-stearns) - [LinkedIn](https://www.linkedin.com/in/zach-stearns/)
+  - **Michael Bonini** - *Turing Student* - [GitHub Profile](https://github.com/mkbonini) - [LinkedIn](https://www.linkedin.com/in/michael-bonini-187157131/)
+  - **Thomas Turner** - *Turing Student* - [GitHub Profile](https://github.com/EagleEye5085) - [LinkedIn](https://www.linkedin.com/in/thomasturner482/)
+  - **Ethan Nguyen** - *Turing Student* - [GitHub Profile](https://github.com/Ethan-t-n) - [LinkedIn](https://www.linkedin.com/in/ethan-nguyen-82b398233/)
+  - **Ben Silverstein** - *Turing Student* - [GitHub Profile](https://github.com/bensjsilverstein/) - [LinkedIn](https://www.linkedin.com/in/benjamin-silverstein-42545a109/)
+  - **Gauri Joshi** - *Turing Student* - [GitHub Profile](http://github.com/gaurijo) - [LinkedIn](https://www.linkedin.com/in/gaurijo/)
+  - **Mary Turpin** - *Turing Student* - [GitHub Profile](https://github.com/MaryT573) - [LinkedIn](https://www.linkedin.com/in/mary-turpin-434140150/)

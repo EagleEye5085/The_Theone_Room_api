@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 19 Sep 2022 20:40:42 GMT
+      - Thu, 22 Sep 2022 16:32:22 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -27,19 +27,19 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - xyzh=xyzh; path=/; expires=Thu, 14-Sep-2023 20:40:38 GMT
+      - xyzh=xyzh; path=/; expires=Sun, 17-Sep-2023 16:32:18 GMT
       Access-Control-Allow-Origin:
       - "*"
       Cf-Cache-Status:
       - DYNAMIC
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=YzkXsFkKDD%2BCeNXaOvm4g%2BwMngR8wtQuo6YJj9qw5mxpa8tJyOZBMqW3P3RSLEReuzJSwlnbL0ci0Kac%2B7o2lAdMXIqedZU6pdNO02E5JvnTb%2Fp8HIoeGHFWIaeM"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=p2AybCJCERrIZAf3pdSjXwN5F0qOQo5ooxU%2BzMbrrnLINPiF%2Fv6%2BaAFcV8BvcQTFQqFlIsARTtnprdjv64yhvrhECj5QzZ%2Fj9FltpNtsh8pdYlV%2FAF7RbYpseCr5"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Cf-Ray:
-      - 74d523356a956300-ORD
+      - 74ec6f927c03813a-ORD
     body:
       encoding: ASCII-8BIT
       string: 'test({   "standard" : {      "staddress" : "Business Center Dr",      "stnumber"
@@ -47,7 +47,7 @@ http_interactions:
         : "80130",      "confidence" : "0.8"   },   "longt" : "-104.910776",   "TimeZone"
         : "America/Denver",   "postal" : "80130",   "AreaCode" : "720,303",   "latt"
         : "39.562539"});'
-  recorded_at: Mon, 19 Sep 2022 20:40:42 GMT
+  recorded_at: Thu, 22 Sep 2022 16:32:22 GMT
 - request:
     method: get
     uri: http://geocoder.ca/?callback=test&geoit=xml&jsonp=1&locate=6707%20s%20vine%20st%20ste%20d,%20centennial,%20co%2080122&showpostal=1
@@ -67,7 +67,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 19 Sep 2022 20:40:47 GMT
+      - Thu, 22 Sep 2022 16:32:27 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -75,19 +75,19 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - xyzh=xyzh; path=/; expires=Thu, 14-Sep-2023 20:40:42 GMT
+      - xyzh=xyzh; path=/; expires=Sun, 17-Sep-2023 16:32:22 GMT
       Access-Control-Allow-Origin:
       - "*"
       Cf-Cache-Status:
       - DYNAMIC
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=kDpYMnQprUN8IN9B81rS%2BNmZUdZW%2Fb7jRO6YxUrZeNU%2B1KBjGH6JYRODuO1TgfNZ9LyOAtfXaSwBtMorIXmJKcXNgyKL%2BA3oUJYpUqnz5CzkZya4GuMER1Lwma3F"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=rhl%2FlKbs9f5wCGCvHnzrZ4Axslo%2FiWg1WMq%2BIBcIrFWM%2FUHs0KVxQE5SZRSAUkFWFXJb4ArYX%2Bpp59IfZtM5ge5D2PxqGBb2jv7bUsRxDh3iM4gCElsRdLRfBEmI"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Cf-Ray:
-      - 74d52351de43e1ca-ORD
+      - 74ec6fada9ac8714-ORD
     body:
       encoding: ASCII-8BIT
       string: 'test({   "standard" : {      "staddress" : "S Vine St",      "stnumber"
@@ -95,7 +95,7 @@ http_interactions:
         "80122",      "confidence" : "0.8"   },   "longt" : "-104.965107",   "TimeZone"
         : "America/Denver",   "postal" : "80122",   "AreaCode" : "720,303",   "latt"
         : "39.594632"});'
-  recorded_at: Mon, 19 Sep 2022 20:40:47 GMT
+  recorded_at: Thu, 22 Sep 2022 16:32:27 GMT
 - request:
     method: get
     uri: http://geocoder.ca/?callback=test&geoit=xml&jsonp=1&locate=6300%20s%20main%20st%20suite%20N101,%20aurora,%20co%2080016&showpostal=1
@@ -115,7 +115,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 19 Sep 2022 20:40:51 GMT
+      - Thu, 22 Sep 2022 16:32:31 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -123,26 +123,26 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - xyzh=xyzh; path=/; expires=Thu, 14-Sep-2023 20:40:47 GMT
+      - xyzh=xyzh; path=/; expires=Sun, 17-Sep-2023 16:32:27 GMT
       Access-Control-Allow-Origin:
       - "*"
       Cf-Cache-Status:
       - DYNAMIC
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=KZS7%2BTaXRDSNmjlkv649wpUiz2AcsUh2%2FnSQl7oG1G2U3q0Mgt1XeShhMvWucZcSTzheavQ9OQeQ%2BtFhDgRf%2Bghei8VlrgxNC1r53h2iDUS4SgjOTsHx9eu%2BpoJY"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=2kTjga42lgU39NdhAjJjyuNtc8ALthlf7umNlYRUyPHtv%2BL2bRzyhTugGhy%2FHkzQWWrN0IFoFGcmoz8gMPBLsFAttyoGs7Snfe5z48CujgZgTnFkiNSBxQUNaLfX"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Cf-Ray:
-      - 74d5236eddcb2a66-ORD
+      - 74ec6fca8d6c29fa-ORD
     body:
       encoding: ASCII-8BIT
       string: 'test({   "standard" : {      "staddress" : "S Main St",      "stnumber"
         : "6300",      "prov" : "CO",      "city" : "Aurora",      "postal" : "80016-5381",      "confidence"
         : "0.8"   },   "longt" : "-104.709213",   "TimeZone" : "America/Denver",   "postal"
         : "80016-5381",   "AreaCode" : "720,303",   "latt" : "39.601628"});'
-  recorded_at: Mon, 19 Sep 2022 20:40:51 GMT
+  recorded_at: Thu, 22 Sep 2022 16:32:31 GMT
 - request:
     method: get
     uri: http://geocoder.ca/?callback=test&geoit=xml&jsonp=1&locate=630%20E%2017th%20Ave,%20Denver,%20CO%2080203&showpostal=1
@@ -162,7 +162,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 19 Sep 2022 20:40:56 GMT
+      - Thu, 22 Sep 2022 16:32:36 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -170,26 +170,26 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - xyzh=xyzh; path=/; expires=Thu, 14-Sep-2023 20:40:51 GMT
+      - xyzh=xyzh; path=/; expires=Sun, 17-Sep-2023 16:32:32 GMT
       Access-Control-Allow-Origin:
       - "*"
       Cf-Cache-Status:
       - DYNAMIC
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=btPgzm%2FlsnlZEYYWSPUh2U0KnFGH8Y3xxk37AOOmvsLasGGZ2CRfpz0vlRLbyJqJ8EGUuyC7calt3WJ598EXQvpkOjH89EccJ8OtyAMVRWIuwTbYOh2b%2BOetIB0U"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=71X%2BOPTIL9bmJbQgOQLcchlrLmuCTdyLdCv2HXNxfhtyvn2YHXMZ3%2Fh9njnvJT3dnOAuPZu1ViZC5kuKjm1OApNb2hcgBjoBDyTbYCFdDRWvYM0TBimCcKieXmZk"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Cf-Ray:
-      - 74d5238c5a418708-ORD
+      - 74ec6fe7e814e252-ORD
     body:
       encoding: ASCII-8BIT
       string: 'test({   "standard" : {      "staddress" : "E 17th Ave",      "stnumber"
         : "630",      "prov" : "CO",      "city" : "Denver",      "postal" : "80203-1411",      "confidence"
         : "0.8"   },   "longt" : "-104.979002",   "TimeZone" : "America/Denver",   "postal"
         : "80203-1411",   "AreaCode" : "720,303",   "latt" : "39.743069"});'
-  recorded_at: Mon, 19 Sep 2022 20:40:56 GMT
+  recorded_at: Thu, 22 Sep 2022 16:32:36 GMT
 - request:
     method: get
     uri: http://geocoder.ca/?callback=test&geoit=xml&jsonp=1&locate=1623%20Pearl%20St,%20Denver,%20CO%2080203&showpostal=1
@@ -209,7 +209,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 19 Sep 2022 20:41:00 GMT
+      - Thu, 22 Sep 2022 16:32:40 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -217,26 +217,26 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - xyzh=xyzh; path=/; expires=Thu, 14-Sep-2023 20:40:56 GMT
+      - xyzh=xyzh; path=/; expires=Sun, 17-Sep-2023 16:32:36 GMT
       Access-Control-Allow-Origin:
       - "*"
       Cf-Cache-Status:
       - DYNAMIC
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=CivlaNc91Kcz6AatUWtf%2Fpb1aXsPLosNFyQHc9ba7LdhrkWUw9TryPU8RZ1RBh8vJcSZdexb%2FLdS5F4GzwgZQrA0%2BZx6%2FEgXsdz4ahvsDvk7pxM1p1TJzNfZEz1Y"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=PK6ICiWE6AhxCcQgZphMYk7K5sfK8aS0%2BxZuoYsqzFRik1b8tJXxE5aOaH1eOBRCcoEAWmu%2BN1UiotC7HFJLii1GHSXOFLIjLQkLMUaSiCWXGJFp6xlq%2FIcidLj6"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Cf-Ray:
-      - 74d523a7fbfd2934-ORD
+      - 74ec70034cf2c51c-ORD
     body:
       encoding: ASCII-8BIT
       string: 'test({   "standard" : {      "staddress" : "Pearl St",      "stnumber"
         : "1623",      "prov" : "CO",      "city" : "Denver",      "postal" : "80203",      "confidence"
         : "0.8"   },   "longt" : "-104.979895",   "TimeZone" : "America/Denver",   "postal"
         : "80203",   "AreaCode" : "720,303",   "latt" : "39.742028"});'
-  recorded_at: Mon, 19 Sep 2022 20:41:00 GMT
+  recorded_at: Thu, 22 Sep 2022 16:32:40 GMT
 - request:
     method: get
     uri: http://geocoder.ca/?callback=test&geoit=xml&jsonp=1&locate=1007%20York%20St,%20Denver,%20CO%2080206&showpostal=1
@@ -256,7 +256,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 19 Sep 2022 20:41:04 GMT
+      - Thu, 22 Sep 2022 16:32:44 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -264,26 +264,26 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - xyzh=xyzh; path=/; expires=Thu, 14-Sep-2023 20:41:00 GMT
+      - xyzh=xyzh; path=/; expires=Sun, 17-Sep-2023 16:32:40 GMT
       Access-Control-Allow-Origin:
       - "*"
       Cf-Cache-Status:
       - DYNAMIC
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=uEbzPNR%2FDDDhdd%2BpawcaJhq14YOLhjQDB84OTIBg4o8uDvqk8go7siNBRjbg1td3Oes9vyuUH2Npeg49Y47%2BBMftGDkBBeASykAr%2FnO1pWgTBXOg5an78DiRYHtY"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=700BTQ9Hq1R9N7uKhLAiRa%2B3T0QAxSjyDoylkaXuNMg6TFBgpbn%2FkfLxSOuTeL%2BL2yMDQSZHtAcvKC129YFvvdIZ2GYwXHJ7I4fxhBJbw69l%2BGZgwdg0MpcetaUD"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Cf-Ray:
-      - 74d523c339fbe110-ORD
+      - 74ec701e598f2c24-ORD
     body:
       encoding: ASCII-8BIT
       string: 'test({   "standard" : {      "staddress" : "N York St",      "stnumber"
         : "1007",      "prov" : "CO",      "city" : "Denver",      "postal" : "80206",      "confidence"
         : "0.8"   },   "longt" : "-104.960198",   "TimeZone" : "America/Denver",   "postal"
         : "80206",   "AreaCode" : "720,303",   "latt" : "39.731948"});'
-  recorded_at: Mon, 19 Sep 2022 20:41:04 GMT
+  recorded_at: Thu, 22 Sep 2022 16:32:44 GMT
 - request:
     method: get
     uri: http://geocoder.ca/?callback=test&geoit=xml&jsonp=1&locate=3509%20E%2012th%20Ave,%20Denver,%20CO%2080206&showpostal=1
@@ -303,7 +303,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 19 Sep 2022 20:41:09 GMT
+      - Thu, 22 Sep 2022 16:32:49 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -311,26 +311,26 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - xyzh=xyzh; path=/; expires=Thu, 14-Sep-2023 20:41:05 GMT
+      - xyzh=xyzh; path=/; expires=Sun, 17-Sep-2023 16:32:45 GMT
       Access-Control-Allow-Origin:
       - "*"
       Cf-Cache-Status:
       - DYNAMIC
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=4n7c3FfIwoWnAsbDlN4NXNZS1a10WXniTX9MUTSgOckRPWKf32vh1WWieb1oCMv4Xv3q65%2F7j%2BXD5UZJSbifL1x%2BEMZDHVuInAclKUK%2B%2ByqjNQUZwWMnE2DV5Kr2"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=dGk%2BiO3o6Gt%2FfFl8%2BL6n540OX58SD3kF%2Bd5ElKhJPmsHxv%2B9WDAND2zj%2FG6Cr%2B8frifqUYlz5lXnFtcfsBpp1WGAaeHD%2Bavpzm3Nwl%2BBJLEajRwcA9wlJqXRKWEM"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Cf-Ray:
-      - 74d523de78a1e23d-ORD
+      - 74ec70398d352d2e-ORD
     body:
       encoding: ASCII-8BIT
       string: 'test({   "standard" : {      "staddress" : "E 12th Ave",      "stnumber"
         : "3509",      "prov" : "CO",      "city" : "Denver",      "postal" : "80206",      "confidence"
         : "0.8"   },   "longt" : "-104.945722",   "TimeZone" : "America/Denver",   "postal"
         : "80206",   "AreaCode" : "720,303",   "latt" : "39.735233"});'
-  recorded_at: Mon, 19 Sep 2022 20:41:09 GMT
+  recorded_at: Thu, 22 Sep 2022 16:32:49 GMT
 - request:
     method: get
     uri: http://ipinfo.io/76.131.44.131/geo
@@ -362,9 +362,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 19 Sep 2022 20:41:30 GMT
+      - Thu, 22 Sep 2022 16:32:49 GMT
       X-Envoy-Upstream-Service-Time:
-      - '2'
+      - '1'
       Strict-Transport-Security:
       - max-age=2592000; includeSubDomains
       Vary:
@@ -378,14 +378,14 @@ http_interactions:
       string: |-
         {
           "ip": "76.131.44.131",
-          "city": "Aurora",
+          "city": "Denver",
           "region": "Colorado",
           "country": "US",
-          "loc": "39.6012,-104.7394",
+          "loc": "39.7392,-104.9847",
           "org": "AS7922 Comcast Cable Communications, LLC",
-          "postal": "80016",
+          "postal": "80203",
           "timezone": "America/Denver",
           "readme": "https://ipinfo.io/missingauth"
         }
-  recorded_at: Mon, 19 Sep 2022 20:41:30 GMT
+  recorded_at: Thu, 22 Sep 2022 16:32:49 GMT
 recorded_with: VCR 6.1.0

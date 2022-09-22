@@ -5,8 +5,15 @@ class Api::V1::ThroneRoomsController < ApplicationController
     render json: ThroneRoomSerializer.new(ThroneRoom.all)
   end
 
-  def closest_five
+  def top_five_by_review
+    render json: ThroneRoomSerializer.new(ThroneRoom.top_five_by_review)
+  end
 
+  def top_five_buy_user
+    render json: ThroneRoomSerializer.new(ThroneRoom.top_five_buy_user)
+  end
+
+  def closest_five
     render json: ThroneRoomSerializer.new(ThroneRoom.near(Geocoder.search(request.remote_ip, ).first.coordinates).limit(5))
   end
 

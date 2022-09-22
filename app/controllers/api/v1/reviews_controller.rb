@@ -15,7 +15,6 @@ class Api::V1::ReviewsController < ApplicationController
 
   def create
     review = Review.new(review_params)
-    # binding.pry
     if review.save
       render json: ReviewSerializer.new(review), status: 201
     else
@@ -30,7 +29,7 @@ class Api::V1::ReviewsController < ApplicationController
       render json: ReviewSerializer.new(Review.find(params[:id]))
     else
       render status: 404
-    end 
+    end
   end
 
   def destroy
@@ -51,7 +50,6 @@ class Api::V1::ReviewsController < ApplicationController
 
   private
   def review_params
-    # binding.pry
     params[:review][:ambiance] = params[:review][:ambiance].to_i if params[:review][:ambiance].to_i > 0
     params[:review][:cleanliness] = params[:review][:cleanliness].to_i if params[:review][:cleanliness].to_i > 0
     params[:review][:privacy] = params[:review][:privacy].to_i if params[:review][:privacy].to_i > 0
@@ -59,13 +57,12 @@ class Api::V1::ReviewsController < ApplicationController
     params[:review][:accessibility] = params[:review][:accessibility].to_i if params[:review][:accessibility].to_i > 0
     params[:review][:throne_room_id] = params[:review][:throne_room_id].to_i if params[:review][:throne_room_id].to_i > 0
     params[:review][:user_id] = params[:review][:user_id].to_i if params[:review][:user_id].to_i > 0
-    # binding.pry
     params.require(:review).permit(
                             :cleanliness,
                             :ambiance,
                             :tp_quality,
                             :privacy,
-                            # :accessibility,
+                            :accessibility,
                             :other_comments,
                             :throne_room_id,
                             :user_id)

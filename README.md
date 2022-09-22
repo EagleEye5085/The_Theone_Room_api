@@ -48,6 +48,7 @@ Throne-Room-api is deployed remotely via Heroku (https://the-throne-room-api.her
 - `patch '/throne_rooms/:id'`
 - `delete '/throne_rooms/:id'`
 - `get '/throne_rooms/closest_five'`
+- `get '/throne_rooms/last_five'`
 ### Reviews
 - `get '/throne_rooms/:id/reviews'`
 - `get '/throne_rooms/:throne_id/reviews/:id'`
@@ -65,6 +66,6 @@ Throne-Room-api is deployed remotely via Heroku (https://the-throne-room-api.her
   - **Michael Bonini** - *Turing Student* - [GitHub Profile](https://github.com/mkbonini) - [LinkedIn](https://www.linkedin.com/in/michael-bonini-187157131/)
   - **Thomas Turner** - *Turing Student* - [GitHub Profile](https://github.com/EagleEye5085) - [LinkedIn](https://www.linkedin.com/in/thomasturner482/)
   - **Ethan Nguyen** - *Turing Student* - [GitHub Profile](https://github.com/Ethan-t-n) - [LinkedIn](https://www.linkedin.com/in/ethan-nguyen-82b398233/)
-  - **Ben Silverstein** - *Turing Student* - [GitHub Profile](https://github.com/Oxalisviolacea) - [LinkedIn](https://www.linkedin.com/in/hanna-davis/)
+  - **Ben Silverstein** - *Turing Student* - [GitHub Profile](https://github.com/bensjsilverstein/) - [LinkedIn](https://www.linkedin.com/in/benjamin-silverstein-42545a109/)
   - **Gauri Joshi** - *Turing Student* - [GitHub Profile](http://github.com/gaurijo) - [LinkedIn](https://www.linkedin.com/in/gaurijo/)
   - **Mary Turpin** - *Turing Student* - [GitHub Profile](https://github.com/MaryT573) - [LinkedIn](https://www.linkedin.com/in/mary-turpin-434140150/)

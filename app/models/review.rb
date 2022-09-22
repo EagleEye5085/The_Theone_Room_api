@@ -4,6 +4,7 @@ class Review < ApplicationRecord
   validates :ambiance, presence: true, numericality: true
   validates :tp_quality, presence: true, numericality: true
   validates :privacy, presence: true, numericality: true
+  validates :accessibility, presence: true, numericality: true
   validates_presence_of :other_comments
   validates_presence_of :throne_room_id
   validates_presence_of :user_id

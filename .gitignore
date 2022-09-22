@@ -14,6 +14,7 @@
 !/tmp/.keep
 
 /coverage
+/spec/fixtures
 
 # Ignore uploaded files in development
 /storage/*
@@ -32,3 +33,5 @@
 
 # Ignore application configuration
 /config/application.yml
+spec/fixtures/vcr_cassettes/recent_reviews.yml
+spec/fixtures/vcr_cassettes/reviews_no_throne.yml

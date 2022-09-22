@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 describe 'Reviews API' do
+
   it 'has a list of reviews' do
     VCR.use_cassette('reviews index') do
-      tr = ThroneRoom.create(name: "walmart bathroom", address: "6675 business center dr, highlands ranch, co 80130", directions: "that way", baby_changing_station: 0, bathroom_style: 1, key_code_required: 1)
+      t1 = ThroneRoom.create(name: "walmart bathroom", address: "6675 business center dr, highlands ranch, co 80130", directions: "that way", baby_changing_station: 0, bathroom_style: 1, key_code_required: 1)
       create_list(:review, 5)
-
-      get "/api/v1/throne_rooms/#{tr.id}/reviews"
+      get "/api/v1/throne_rooms/#{t1.id}/reviews"
 
       expect(response).to be_successful
 
@@ -31,10 +31,11 @@ describe 'Reviews API' do
 
   it 'can get one review by its ID' do
     VCR.use_cassette('reviews show') do
-      tr = ThroneRoom.create(name: "walmart bathroom", address: "6675 business center dr, highlands ranch, co 80130", directions: "that way", baby_changing_station: 0, bathroom_style: 1, key_code_required: 1)
+      t1 = ThroneRoom.create(name: "walmart bathroom", address: "6675 business center dr, highlands ranch, co 80130", directions: "that way", baby_changing_station: 0, bathroom_style: 1, key_code_required: 1)
+      create_list(:review, 5)
       id = create(:review).id
 
-      get "/api/v1/throne_rooms/#{tr.id}/reviews/#{id}"
+      get "/api/v1/throne_rooms/#{t1.id}/reviews/#{id}"
 
       response_body = JSON.parse(response.body, symbolize_names: true)
       review = response_body[:data]
@@ -72,6 +73,7 @@ describe 'Reviews API' do
       headers = {"CONTENT_TYPE" => "application/json"}
 
       post "/api/v1/throne_rooms/#{tr_id}/reviews", headers: headers, params: JSON.generate(review: review_params)
+
       created_review = Review.last
         # binding.pry
       expect(response).to have_http_status(201)
@@ -92,13 +94,16 @@ describe 'Reviews API' do
 
   it "updates an existing review" do
     VCR.use_cassette('reviews update') do
-      tr = ThroneRoom.create(name: "walmart bathroom", address: "6675 business center dr, highlands ranch, co 80130", directions: "that way", baby_changing_station: 0, bathroom_style: 1, key_code_required: 1)
+      t1 = ThroneRoom.create(name: "walmart bathroom", address: "6675 business center dr, highlands ranch, co 80130", directions: "that way", baby_changing_station: 0, bathroom_style: 1, key_code_required: 1)
+      create_list(:review, 5)
+
       id = create(:review).id
       previous_cleanliness = Review.last.cleanliness
       review_params = { cleanliness: Faker::Number.digit }
       headers = {"CONTENT_TYPE" => "application/json"}
 
-      patch "/api/v1/throne_rooms/#{tr.id}/reviews/#{id}", headers: headers, params: JSON.generate({review: review_params})
+      patch "/api/v1/throne_rooms/#{t1.id}/reviews/#{id}", headers: headers, params: JSON.generate({review: review_params})
+
       review = Review.find_by(id: id)
       # binding.pry
       expect(response).to be_successful
@@ -109,15 +114,16 @@ describe 'Reviews API' do
 
   it 'returns 404 if review is not found' do
     VCR.use_cassette('reviews not found') do
-      tr = ThroneRoom.create(name: "walmart bathroom", address: "6675 business center dr, highlands ranch, co 80130", directions: "that way", baby_changing_station: 0, bathroom_style: 1, key_code_required: 1)
+      t1 = ThroneRoom.create(name: "walmart bathroom", address: "6675 business center dr, highlands ranch, co 80130", directions: "that way", baby_changing_station: 0, bathroom_style: 1, key_code_required: 1)
+      create_list(:review, 5)
       review = create(:review)
       id = 90654501
 
-      get "/api/v1/throne_rooms/#{tr.id}/reviews/#{id}"
+      get "/api/v1/throne_rooms/#{t1.id}/reviews/#{id}"
 
       expect(response).to have_http_status(404)
 
-      delete "/api/v1/throne_rooms/#{tr.id}/reviews/#{id}"
+      delete "/api/v1/throne_rooms/#{t1.id}/reviews/#{id}"
 
       expect(response).to have_http_status(404)
     end
@@ -125,7 +131,9 @@ describe 'Reviews API' do
 
   it 'returns 404 if review cannot be created' do
     VCR.use_cassette('reviews failed create') do
-      tr = ThroneRoom.create(name: "walmart bathroom", address: "6675 business center dr, highlands ranch, co 80130", directions: "that way", baby_changing_station: 0, bathroom_style: 1, key_code_required: 1)
+      t1 = ThroneRoom.create(name: "walmart bathroom", address: "6675 business center dr, highlands ranch, co 80130", directions: "that way", baby_changing_station: 0, bathroom_style: 1, key_code_required: 1)
+      create_list(:review, 5)
+
       review = create(:review)
       review_params = ({
                       cleanliness: Faker::Number.between(from: 1, to: 5),
@@ -140,7 +148,8 @@ describe 'Reviews API' do
 
       headers = {"CONTENT_TYPE" => "application/json"}
 
-      post "/api/v1/throne_rooms/#{tr.id}/reviews", headers: headers, params: JSON.generate(review: review_params)
+      post "/api/v1/throne_rooms/#{t1.id}/reviews", headers: headers, params: JSON.generate(review: review_params)
+
 
       expect(response).to have_http_status(404)
     end
@@ -148,13 +157,16 @@ describe 'Reviews API' do
 
   it 'returns 404 if review cannot be updated' do
     VCR.use_cassette('reviews failed update') do
-      tr = ThroneRoom.create(name: "walmart bathroom", address: "6675 business center dr, highlands ranch, co 80130", directions: "that way", baby_changing_station: 0, bathroom_style: 1, key_code_required: 1)
+      t1 = ThroneRoom.create(name: "walmart bathroom", address: "6675 business center dr, highlands ranch, co 80130", directions: "that way", baby_changing_station: 0, bathroom_style: 1, key_code_required: 1)
+      create_list(:review, 5)
+
       id = create(:review).id
       previous_cleanliness = Review.last.cleanliness
       review_params = { cleanliness: "hello" }
       headers = {"CONTENT_TYPE" => "application/json"}
 
-      patch "/api/v1/throne_rooms/#{tr.id}/reviews/#{id}", headers: headers, params: JSON.generate({review: review_params})
+      patch "/api/v1/throne_rooms/#{t1.id}/reviews/#{id}", headers: headers, params: JSON.generate({review: review_params})
+
       review = Review.find_by(id: id)
 
       expect(response).to have_http_status(404)

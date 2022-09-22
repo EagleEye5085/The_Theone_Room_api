@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 19 Sep 2022 16:25:34 GMT
+      - Thu, 22 Sep 2022 19:58:17 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -27,19 +27,19 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - xyzh=xyzh; path=/; expires=Thu, 14-Sep-2023 16:25:34 GMT
+      - xyzh=xyzh; path=/; expires=Sun, 17-Sep-2023 19:58:14 GMT
       Access-Control-Allow-Origin:
       - "*"
       Cf-Cache-Status:
       - DYNAMIC
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=PJVEsmd2sRO%2BEAVwrstrqdr3JVHwe8b7dKsbEkPp7xw7XbIbbm5bp5zgLLjScVOUpDmlHLQus4EQTbfHfrSadLamHioIMs%2BRV1fWU%2BKNetWO%2FGsnNoRFwDlx9DuA"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=zTsafOqweJrI05A1NNjbZiKkRoX%2FoBOJwJLpmBBR2KDdh%2Bpw7%2FaDE4TB2W3D4WYIy8%2FSXmsg5lZrOEa%2BVOef4j9waV58dN4WA0vKCqG0SClmLIuyjAV6xbGyIOw8"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Cf-Ray:
-      - 74d3ad933ddc297a-ORD
+      - 74ed9d3e9aa361e6-ORD
     body:
       encoding: ASCII-8BIT
       string: 'test({   "standard" : {      "staddress" : "Business Center Dr",      "stnumber"
@@ -47,7 +47,7 @@ http_interactions:
         : "80130",      "confidence" : "0.8"   },   "longt" : "-104.910776",   "TimeZone"
         : "America/Denver",   "postal" : "80130",   "AreaCode" : "720,303",   "latt"
         : "39.562539"});'
-  recorded_at: Mon, 19 Sep 2022 16:25:34 GMT
+  recorded_at: Thu, 22 Sep 2022 19:58:17 GMT
 - request:
     method: get
     uri: http://geocoder.ca/?callback=test&geoit=xml&jsonp=1&locate=6707%20s%20vine%20st%20ste%20d,%20centennial,%20co%2080122&showpostal=1
@@ -67,7 +67,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 19 Sep 2022 16:25:34 GMT
+      - Thu, 22 Sep 2022 19:58:19 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -75,19 +75,19 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - xyzh=xyzh; path=/; expires=Thu, 14-Sep-2023 16:25:34 GMT
+      - xyzh=xyzh; path=/; expires=Sun, 17-Sep-2023 19:58:17 GMT
       Access-Control-Allow-Origin:
       - "*"
       Cf-Cache-Status:
       - DYNAMIC
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=D1NeAk16Mnss03NiTR2WY1iLATwM4VwVQTlHi57D36hTEnpiNhuEynWdk4pSphaeCpV9DFeltR2PJ7ZsYtBctMLQsY58i%2FLKx%2Bj9NkU%2BuCXmIbiZ%2B56jrvCnaqbx"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=DPdagTziGReny0i%2FYWr5qGaTgJeMErP1Vj7amxbLfQJ9V1lNMwUxFOLSDO8VHSgWMWtzptNBsImAscFspNhQmEjCOtbuavjvmKLL8k5Xbk3V22YGrPA7vNUJJhLI"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Cf-Ray:
-      - 74d3ad959dc886e1-ORD
+      - 74ed9d4dcf072d0d-ORD
     body:
       encoding: ASCII-8BIT
       string: 'test({   "standard" : {      "staddress" : "S Vine St",      "stnumber"
@@ -95,7 +95,7 @@ http_interactions:
         "80122",      "confidence" : "0.8"   },   "longt" : "-104.965107",   "TimeZone"
         : "America/Denver",   "postal" : "80122",   "AreaCode" : "720,303",   "latt"
         : "39.594632"});'
-  recorded_at: Mon, 19 Sep 2022 16:25:34 GMT
+  recorded_at: Thu, 22 Sep 2022 19:58:19 GMT
 - request:
     method: get
     uri: http://geocoder.ca/?callback=test&geoit=xml&jsonp=1&locate=6300%20s%20main%20st%20suite%20N101,%20aurora,%20co%2080016&showpostal=1
@@ -115,7 +115,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 19 Sep 2022 16:25:35 GMT
+      - Thu, 22 Sep 2022 19:58:22 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -123,24 +123,24 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - xyzh=xyzh; path=/; expires=Thu, 14-Sep-2023 16:25:35 GMT
+      - xyzh=xyzh; path=/; expires=Sun, 17-Sep-2023 19:58:20 GMT
       Access-Control-Allow-Origin:
       - "*"
       Cf-Cache-Status:
       - DYNAMIC
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=38GMoM%2B5IlQe%2FMYwAfVhbOZOtlW6EB0XbY1odp76nylw9YjLiGyjQ3SiSUzR1DXiE4JetSB%2FHT3E7PGFf6OEOjvhY1EKRYxvWE6Jwh5bF7SzeLoYo8dJKhBhke24"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=KruOtYRV0QlpsLIIimxiqTSzy8l68ZoQbGsVzoXf4YaCooowneEGgX5hqi%2FLyk5l80%2FOMXqpeYmQc3FG00Njn%2F6yK1v1HQjiRN%2FoxXSbIB8G3XOVUrkJqAR23DwH"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Cf-Ray:
-      - 74d3ad9969a70388-ORD
+      - 74ed9d5e7e6b86ff-ORD
     body:
       encoding: ASCII-8BIT
       string: 'test({   "standard" : {      "staddress" : "S Main St",      "stnumber"
         : "6300",      "prov" : "CO",      "city" : "Aurora",      "postal" : "80016-5381",      "confidence"
         : "0.8"   },   "longt" : "-104.709213",   "TimeZone" : "America/Denver",   "postal"
         : "80016-5381",   "AreaCode" : "720,303",   "latt" : "39.601628"});'
-  recorded_at: Mon, 19 Sep 2022 16:25:35 GMT
+  recorded_at: Thu, 22 Sep 2022 19:58:22 GMT
 recorded_with: VCR 6.1.0

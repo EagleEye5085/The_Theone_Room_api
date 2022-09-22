@@ -27,10 +27,11 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'faraday'
 gem 'jsonapi-serializer'
 gem 'geocoder'
+gem 'faker'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 group :test do
-  gem 'faker'
+  # gem 'faker'
   gem 'webmock'
   gem 'vcr'
   gem 'launchy'

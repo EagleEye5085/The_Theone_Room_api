@@ -5,9 +5,21 @@ class Api::V1::ThroneRoomsController < ApplicationController
     render json: ThroneRoomSerializer.new(ThroneRoom.all)
   end
 
-  def closest_five
+  def last_five
+    # @thrones = ThroneRoom.close_to(address)
+    render json: ThroneRoomSerializer.new(ThroneRoom.all.last(5))
+  end
 
-    render json: ThroneRoomSerializer.new(ThroneRoom.near(Geocoder.search(request.remote_ip, ).first.coordinates).limit(5))
+  def top_five_by_review
+    render json: ThroneRoomSerializer.new(ThroneRoom.top_five_by_review)
+  end
+
+  def top_five_buy_user
+    render json: ThroneRoomSerializer.new(ThroneRoom.top_five_buy_user)
+  end
+
+  def closest_five
+    render json: ThroneRoomSerializer.new(ThroneRoom.near(Geocoder.search(request.remote_ip).first.coordinates, 99999).limit(5))
   end
 
   def show

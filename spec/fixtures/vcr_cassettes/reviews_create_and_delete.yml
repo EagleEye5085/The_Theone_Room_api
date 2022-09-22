@@ -15,37 +15,34 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 200
-      message: OK
+      code: 403
+      message: Forbidden
     headers:
       Date:
-      - Mon, 19 Sep 2022 16:25:31 GMT
+      - Thu, 22 Sep 2022 19:57:58 GMT
       Content-Type:
-      - application/json; charset=utf-8
+      - text/xml; charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
       Set-Cookie:
-      - xyzh=xyzh; path=/; expires=Thu, 14-Sep-2023 16:25:31 GMT
+      - xyzh=xyzh; path=/; expires=Sun, 17-Sep-2023 19:57:58 GMT
       Access-Control-Allow-Origin:
       - "*"
       Cf-Cache-Status:
       - DYNAMIC
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=Csg9EToV7OAyt2bjxHlbFGjFdVtyukZ%2BObdqfJ7MUSUzwu3bw9wV5ampmANiFytOlPwDnpuYlahFE%2FBVlAZKx%2Ff54cFHBwTu7567dawM1JJNQf9HTYb%2FBuHgoFEY"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=Td1sc2Kp1zhm8Svb%2BeZTutt4MMV4pHh8zVyMWhg7o4i%2BHV%2FA5xuEoG%2Fk1wn5wrvsAz%2FSFzF9qNalPGCKbEkUnKUHzhMak9fXCqywoat%2BjEkLcNBV0g9UogETR%2BWA"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Cf-Ray:
-      - 74d3ad8409c22919-ORD
+      - 74ed9cd99bb0869f-ORD
     body:
       encoding: ASCII-8BIT
-      string: 'test({   "standard" : {      "staddress" : "Business Center Dr",      "stnumber"
-        : "6675",      "prov" : "CO",      "city" : "Highlands Ranch",      "postal"
-        : "80130",      "confidence" : "0.8"   },   "longt" : "-104.910776",   "TimeZone"
-        : "America/Denver",   "postal" : "80130",   "AreaCode" : "720,303",   "latt"
-        : "39.562539"});'
-  recorded_at: Mon, 19 Sep 2022 16:25:31 GMT
+      string: "<error><code>006</code><message>Request Throttled. Over Rate limit:
+        up to 2 per sec. See geocoder.ca/pricing</message><requests>5</requests></error>"
+  recorded_at: Thu, 22 Sep 2022 19:57:58 GMT
 recorded_with: VCR 6.1.0

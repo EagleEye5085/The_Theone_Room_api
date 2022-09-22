@@ -6,6 +6,7 @@ class CreateReview < ActiveRecord::Migration[5.2]
       t.integer :tp_quality
       t.integer :privacy
       t.integer :accessibility
+      t.float :overall_rating
       t.integer :user_id
       t.string :other_comments
       t.references :throne_room, foreign_key: true

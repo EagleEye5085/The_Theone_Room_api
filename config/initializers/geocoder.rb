@@ -1,6 +1,6 @@
 Geocoder.configure(
   # Geocoding options
-  lookup: :test, ip_lookup: :test,
+  # lookup: :test, ip_lookup: :test,
   timeout: 25,                 # geocoding service timeout (secs)
   lookup: :geocoder_ca,         # name of geocoding service (symbol)
   ip_lookup: :ipinfo_io,      # name of IP address geocoding service (symbol)

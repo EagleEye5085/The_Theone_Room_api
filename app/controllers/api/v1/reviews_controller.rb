@@ -15,7 +15,6 @@ class Api::V1::ReviewsController < ApplicationController
 
   def create
     review = Review.new(review_params)
-    # binding.pry
     if review.save
       render json: ReviewSerializer.new(review), status: 201
     else
@@ -29,7 +28,7 @@ class Api::V1::ReviewsController < ApplicationController
       render json: ReviewSerializer.new(Review.find(params[:id]))
     else
       render status: 404
-    end 
+    end
   end
 
   def destroy
@@ -47,6 +46,7 @@ class Api::V1::ReviewsController < ApplicationController
                             :ambiance,
                             :tp_quality,
                             :privacy,
+                            :accessibility,
                             :other_comments,
                             :throne_room_id,
                             :user_id)

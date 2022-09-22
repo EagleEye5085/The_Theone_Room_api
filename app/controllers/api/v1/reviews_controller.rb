@@ -69,7 +69,7 @@ class Api::V1::ReviewsController < ApplicationController
                             :ambiance,
                             :tp_quality,
                             :privacy,
-                            # :accessibility,
+                            :accessibility,
                             :other_comments,
                             :throne_room_id,
                             :user_id)

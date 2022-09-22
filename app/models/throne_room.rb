@@ -19,11 +19,19 @@ class ThroneRoom < ApplicationRecord
 
   after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
 
+
+  def review_averages
+    reviews.pluck('avg(cleanliness), avg(ambiance), avg(tp_quality), avg(privacy), avg(accessibility)').flatten
+  end
+
+  def overall_averages
+    # binding.pry
+    self.review_averages.sum / self.review_averages.count
+  end
+
   def self.top_five_by_review
     # binding.pry
     ThroneRoom.all.joins(:reviews).select("throne_rooms.*, avg(reviews.overall_rating) as average_rating").group(:id).order("average_rating desc")
   end
-
-
 
 end

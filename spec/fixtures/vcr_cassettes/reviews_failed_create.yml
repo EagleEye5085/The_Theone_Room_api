@@ -15,39 +15,36 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 200
-      message: OK
+      code: 403
+      message: Forbidden
     headers:
       Date:
-      - Thu, 22 Sep 2022 16:27:14 GMT
+      - Thu, 22 Sep 2022 19:57:59 GMT
       Content-Type:
-      - application/json; charset=utf-8
+      - text/xml; charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
       Set-Cookie:
-      - xyzh=xyzh; path=/; expires=Sun, 17-Sep-2023 16:27:10 GMT
+      - xyzh=xyzh; path=/; expires=Sun, 17-Sep-2023 19:57:59 GMT
       Access-Control-Allow-Origin:
       - "*"
       Cf-Cache-Status:
       - DYNAMIC
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=g%2BE3JHCnJTeZNKltLcfznP8CKb5PMXBMilc0%2FDbSTbARMTB7yNlu7n1QF1VVhQGId3b1kCVu6jKUoR8Y0Tr%2BtNKjV70CLDYHmpIaMZZo2IzqM%2FpDudDq35TrtdWH"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=VIUwr5KMoSJkSobOvocz5%2BYMPAgQexE7Pd8aEopbtLqpyswcNRzwnw1JcV2WtGq2Zof4DkIOqrs8Hu4wLyxMqtLL1MRoMlYgI7k20ZsIB%2BLV8AHVOzENMHC0RWDu"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Cf-Ray:
-      - 74ec680b08012986-ORD
+      - 74ed9ce08b132bbd-ORD
     body:
       encoding: ASCII-8BIT
-      string: 'test({   "standard" : {      "staddress" : "Business Center Dr",      "stnumber"
-        : "6675",      "prov" : "CO",      "city" : "Highlands Ranch",      "postal"
-        : "80130",      "confidence" : "0.8"   },   "longt" : "-104.910776",   "TimeZone"
-        : "America/Denver",   "postal" : "80130",   "AreaCode" : "720,303",   "latt"
-        : "39.562539"});'
-  recorded_at: Thu, 22 Sep 2022 16:27:14 GMT
+      string: "<error><code>006</code><message>Request Throttled. Over Rate limit:
+        up to 2 per sec. See geocoder.ca/pricing</message><requests>10</requests></error>"
+  recorded_at: Thu, 22 Sep 2022 19:57:59 GMT
 - request:
     method: get
     uri: http://geocoder.ca/?callback=test&geoit=xml&jsonp=1&locate=6675%20business%20center%20dr,%20highlands%20ranch,%20co%2080130&showpostal=1
@@ -67,7 +64,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 22 Sep 2022 16:27:18 GMT
+      - Thu, 22 Sep 2022 19:58:02 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -75,19 +72,19 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - xyzh=xyzh; path=/; expires=Sun, 17-Sep-2023 16:27:14 GMT
+      - xyzh=xyzh; path=/; expires=Sun, 17-Sep-2023 19:58:00 GMT
       Access-Control-Allow-Origin:
       - "*"
       Cf-Cache-Status:
       - DYNAMIC
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=hDvVP60jwUDhnFvaO9mkUBBDHixPlMdQ8ZhDKTVFWL7ghunL7AhD0jA99FmcNKC%2FBxhrMw8XRAeYFhZjdptBIX%2BYGu3lRDfKlDz8awKSg4mys%2F%2BETBO%2Fnosr6IPr"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=ekluvkYw3q1PrOU5VeBHbzxqEyD3uKAOicYtpktvIeR%2BUZG4rgwluQDawZi9frGAWpN%2F4ZgiJpf8pQJxoZucD185gN6TGFUUbDVekUM1haNLYCYuKJCelaS2Am4K"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Cf-Ray:
-      - 74ec682688a7635a-ORD
+      - 74ed9ce2597c2bcc-ORD
     body:
       encoding: ASCII-8BIT
       string: 'test({   "standard" : {      "staddress" : "Business Center Dr",      "stnumber"
@@ -95,5 +92,5 @@ http_interactions:
         : "80130",      "confidence" : "0.8"   },   "longt" : "-104.910776",   "TimeZone"
         : "America/Denver",   "postal" : "80130",   "AreaCode" : "720,303",   "latt"
         : "39.562539"});'
-  recorded_at: Thu, 22 Sep 2022 16:27:18 GMT
+  recorded_at: Thu, 22 Sep 2022 19:58:02 GMT
 recorded_with: VCR 6.1.0

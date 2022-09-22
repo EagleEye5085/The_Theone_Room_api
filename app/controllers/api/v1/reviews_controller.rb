@@ -1,6 +1,6 @@
 class Api::V1::ReviewsController < ApplicationController
     def index
-        render json: ReviewSerializer.new(Review.all)
+        render json: ReviewSerializer.new(Review.where("throne_room_id = ?", params[:throne_room_id]))
     end
 
     def show
@@ -47,6 +47,10 @@ class Api::V1::ReviewsController < ApplicationController
       render status: 404
     end
   end
+
+  # def averages
+  #   render json: AverageSerializer.new(Review.tr_average)
+  # end
 
   private
   def review_params

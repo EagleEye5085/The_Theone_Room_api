@@ -6,6 +6,7 @@ RSpec.describe Review, type: :model do
     it { should validate_presence_of(:ambiance) }
     it { should validate_presence_of(:tp_quality) }
     it { should validate_presence_of(:privacy) }
+    it { should validate_presence_of(:accessibility) }
     it { should validate_presence_of(:other_comments) }
     it { should validate_presence_of(:throne_room_id) }
     it { should validate_presence_of(:user_id) }

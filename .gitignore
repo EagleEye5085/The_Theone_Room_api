@@ -29,6 +29,9 @@
 #/config/application.yml
 
 # Ignore application configuration
+# /config/application.yml
+
+# Ignore application configuration
 /config/application.yml
 spec/fixtures/vcr_cassettes/recent_reviews.yml
 spec/fixtures/vcr_cassettes/reviews_no_throne.yml

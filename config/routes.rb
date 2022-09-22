@@ -5,6 +5,8 @@ Rails.application.routes.draw do
       get '/throne_rooms/last_five', to: 'throne_rooms#last_five'
       get 'throne_rooms/top_five_by_review', to: 'throne_rooms#top_five_by_review'
       get '/throne_rooms/:id/reviews/recent', to: 'reviews#recent'
+      get '/throne_rooms/:id/reviews/review_averages', to: 'throne_rooms#review_averages'
+      get '/throne_rooms/:id/reviews/overall_averages', to: 'throne_rooms#overall_averages'
       resources :throne_rooms do
         resources :reviews
       end

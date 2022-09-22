@@ -59,7 +59,7 @@ Throne-Room-api is deployed remotely via Heroku (https://the-throne-room-api.her
 
 ## Schema <a name="schema"></a>
 
-<img width="667" alt="The Throne Room BE Schema" src="https://user-images.githubusercontent.com/16493270/191601913-2d554c02-75d4-45bd-9937-9656e5fb84a9.png">
+<img width="667" alt="The Throne Room BE Schema" src="https://user-images.githubusercontent.com/102835975/191836417-304e418f-c370-4763-b6eb-47c722756db8.png">
 
 
 ## Authors

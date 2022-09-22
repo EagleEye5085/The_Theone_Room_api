@@ -1,4 +1,3 @@
-require 'pry'
 class Review < ApplicationRecord
   validates :cleanliness, presence: true, numericality: true
   validates :ambiance, presence: true, numericality: true

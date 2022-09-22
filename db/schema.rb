@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2022_09_14_210909) do
     t.integer "ambiance"
     t.integer "tp_quality"
     t.integer "privacy"
+    t.integer "accessibility"
     t.integer "user_id"
     t.string "other_comments"
     t.bigint "throne_room_id"

@@ -22,6 +22,7 @@ describe 'Reviews API' do
         expect(review[:attributes][:ambiance]).to be_a(Integer)
         expect(review[:attributes][:tp_quality]).to be_a(Integer)
         expect(review[:attributes][:privacy]).to be_an(Integer)
+        expect(review[:attributes][:accessibility]).to be_an(Integer)
         expect(review[:attributes][:other_comments]).to be_an(String)
         expect(review[:attributes]).to_not have_key(:created_at)
       end
@@ -48,6 +49,7 @@ describe 'Reviews API' do
       expect(review[:attributes][:ambiance]).to be_a(Integer)
       expect(review[:attributes][:tp_quality]).to be_a(Integer)
       expect(review[:attributes][:privacy]).to be_an(Integer)
+      expect(review[:attributes][:accessibility]).to be_an(Integer)
       expect(review[:attributes][:other_comments]).to be_an(String)
       expect(review[:attributes]).to_not have_key(:created_at)
     end
@@ -61,6 +63,7 @@ describe 'Reviews API' do
                       ambiance: Faker::Number.between(from: 1, to: 5),
                       tp_quality: Faker::Number.between(from: 1, to: 5),
                       privacy: Faker::Number.between(from: 1, to: 5),
+                      accessibility: Faker::Number.between(from: 1, to: 5),
                       other_comments: Faker::Lorem.paragraph(sentence_count: 2, supplemental: true),
                       throne_room_id: tr_id,
                       user_id: Faker::Number.digit
@@ -70,12 +73,13 @@ describe 'Reviews API' do
 
       post "/api/v1/throne_rooms/#{tr_id}/reviews", headers: headers, params: JSON.generate(review: review_params)
       created_review = Review.last
-
+        # binding.pry
       expect(response).to have_http_status(201)
       expect(created_review.cleanliness).to eq(review_params[:cleanliness])
       expect(created_review.ambiance).to eq(review_params[:ambiance])
       expect(created_review.tp_quality).to eq(review_params[:tp_quality])
       expect(created_review.privacy).to eq(review_params[:privacy])
+      expect(created_review.accessibility).to eq(review_params[:accessibility])
       expect(created_review.other_comments).to eq(review_params[:other_comments])
 
       delete "/api/v1/throne_rooms/#{tr_id}/reviews/#{created_review.id}"
@@ -128,6 +132,7 @@ describe 'Reviews API' do
                       ambiance: Faker::Number.between(from: 1, to: 5),
                       tp_quality: Faker::Number.between(from: 1, to: 5),
                       privacy: Faker::Number.between(from: 1, to: 5),
+                      accessibility: Faker::Number.between(from: 1, to: 5),
                       other_comments: Faker::Lorem.paragraph(sentence_count: 2, supplemental: true),
                       throne_room_id: ThroneRoom.create(name: "walmart bathroom", address: "6675 business center dr, highlands ranch, co 80130", directions: "that way", baby_changing_station: 0, bathroom_style: 1, key_code_required: 1).id,
                       # user_id: Faker::Number.digit
@@ -187,10 +192,10 @@ describe 'Reviews API' do
       # review = create(:review)
       t1 = ThroneRoom.create(name: "walmart bathroom", address: "6675 business center dr, highlands ranch, co 80130", directions: "that way", baby_changing_station: 0, bathroom_style: 1, key_code_required: 1)
       tr_id = t1.id
-        Review.create!( "cleanliness":1, "ambiance": 1, "tp_quality":1, "privacy":2,  "user_id":1,  "other_comments": "eh",  "throne_room_id": tr_id)
-        Review.create!( "cleanliness":2, "ambiance": 3, "tp_quality":1, "privacy":1,  "user_id":2,  "other_comments": "meh",  "throne_room_id": tr_id)
-        Review.create!( "cleanliness":1, "ambiance": 2, "tp_quality":1, "privacy":1,  "user_id":3,  "other_comments": "it was alright",  "throne_room_id": tr_id)
-        Review.create!( "cleanliness":2, "ambiance": 1, "tp_quality":1, "privacy":2,  "user_id":4,  "other_comments": "ugh",  "throne_room_id": tr_id)
+        Review.create!( "cleanliness":1, "ambiance": 1, "tp_quality":1, "privacy":2, "accessibility":2,  "user_id":1,  "other_comments": "eh",  "throne_room_id": tr_id)
+        Review.create!( "cleanliness":2, "ambiance": 3, "tp_quality":1, "privacy":1, "accessibility":2,  "user_id":2,  "other_comments": "meh",  "throne_room_id": tr_id)
+        Review.create!( "cleanliness":1, "ambiance": 2, "tp_quality":1, "privacy":1, "accessibility":1, "user_id":3,  "other_comments": "it was alright",  "throne_room_id": tr_id)
+        Review.create!( "cleanliness":2, "ambiance": 1, "tp_quality":1, "privacy":2, "accessibility":1, "user_id":4,  "other_comments": "ugh",  "throne_room_id": tr_id)
 
       get "/api/v1/throne_rooms/#{tr_id}/reviews/review_averages"
 
@@ -203,6 +208,7 @@ describe 'Reviews API' do
       expect(response_body.second).to eq("1.75")
       expect(response_body.third).to eq("1.0")
       expect(response_body.fourth).to eq("1.5")
+      expect(response_body.fifth).to eq("1.5")
     end
   end
 
@@ -211,17 +217,17 @@ describe 'Reviews API' do
       # review = create(:review)
       t1 = ThroneRoom.create(name: "walmart bathroom", address: "6675 business center dr, highlands ranch, co 80130", directions: "that way", baby_changing_station: 0, bathroom_style: 1, key_code_required: 1)
       tr_id = t1.id
-        Review.create!( "cleanliness":1, "ambiance": 1, "tp_quality":1, "privacy":2,  "user_id":1,  "other_comments": "eh",  "throne_room_id": tr_id)
-        Review.create!( "cleanliness":2, "ambiance": 3, "tp_quality":1, "privacy":1,  "user_id":2,  "other_comments": "meh",  "throne_room_id": tr_id)
-        Review.create!( "cleanliness":1, "ambiance": 2, "tp_quality":1, "privacy":1,  "user_id":3,  "other_comments": "it was alright",  "throne_room_id": tr_id)
-        Review.create!( "cleanliness":2, "ambiance": 1, "tp_quality":1, "privacy":2,  "user_id":4,  "other_comments": "ugh",  "throne_room_id": tr_id)
+        Review.create!( "cleanliness":1, "ambiance": 1, "tp_quality":1, "privacy":2, "accessibility":2,  "user_id":1,  "other_comments": "eh",  "throne_room_id": tr_id)
+        Review.create!( "cleanliness":2, "ambiance": 3, "tp_quality":1, "privacy":1, "accessibility":2,  "user_id":2,  "other_comments": "meh",  "throne_room_id": tr_id)
+        Review.create!( "cleanliness":1, "ambiance": 2, "tp_quality":1, "privacy":1, "accessibility":1, "user_id":3,  "other_comments": "it was alright",  "throne_room_id": tr_id)
+        Review.create!( "cleanliness":2, "ambiance": 1, "tp_quality":1, "privacy":2, "accessibility":1, "user_id":4,  "other_comments": "ugh",  "throne_room_id": tr_id)
 
       get "/api/v1/throne_rooms/#{tr_id}/reviews/overall_averages"
 
       response_body = JSON.parse(response.body)
       # reviews = response_body[:data]
 
-      expect(response_body).to eq("1.4375")
+      expect(response_body).to eq("1.45")
     end
   end
 
